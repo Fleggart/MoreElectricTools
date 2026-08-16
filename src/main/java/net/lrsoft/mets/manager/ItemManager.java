@@ -18,7 +18,6 @@ import net.lrsoft.mets.item.battery.ThoriumBattery;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
-import net.lrsoft.mets.item.weapon.ElectricPlasmaGun;
 import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
 import net.lrsoft.mets.item.weapon.ElectricShield;
 import net.lrsoft.mets.item.weapon.ElectricSubmachineGun;
@@ -66,7 +65,6 @@ public class ItemManager {
 	public static AdvancedElectricSubmachineGun advancedElectricSubmachineGun;
 	public static TacticalLaserSubmachineGun tacticalLaserSubmachineGun;
 	public static ElectricRocketLauncher electricRocketLauncher;
-	public static ElectricPlasmaGun electricPlasmaGun;
 	public static TachyonDisruptor tachyonDisruptor;
 	
 	static 
@@ -92,7 +90,6 @@ public class ItemManager {
 		advancedElectricSubmachineGun = new AdvancedElectricSubmachineGun();
 		tacticalLaserSubmachineGun = new TacticalLaserSubmachineGun();
 		electricRocketLauncher = new ElectricRocketLauncher();
-		electricPlasmaGun = new ElectricPlasmaGun();
 		tachyonDisruptor = new TachyonDisruptor();
 	}
 	
@@ -117,7 +114,6 @@ public class ItemManager {
 		event.getRegistry().register(electricLighter);
 		event.getRegistry().register(geomagneticDetector);
 		
-		event.getRegistry().register(electricPlasmaGun);
 		event.getRegistry().register(electricWirlessManager);
 		event.getRegistry().register(tachyonDisruptor);
 		
@@ -216,19 +212,6 @@ public class ItemManager {
 						'S', Items.LEAD,
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
 				});		
-		
-		// 移除 PlasmaAirCannon 合成配方
-		// Recipes.advRecipes.addRecipe(new ItemStack(plasmaAirCannon), 
-		// 		new Object[] {
-		// 				"CCB",
-		// 				"LPA",
-		// 				"LLB",
-		// 				'C', IC2Items.getItem("crafting", "coil"),
-		// 				'B', getAllTypeStack(lithiumBattery),
-		// 				'L', IC2Items.getItem("crafting", "alloy"),
-		// 				'P', IC2Items.getItem("fluid_cell"),
-		// 				'A', IC2Items.getItem("crafting", "advanced_circuit")
-		// 		});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricShield), 
 				new Object[] {
@@ -350,19 +333,20 @@ public class ItemManager {
 					'C', IC2Items.getItem("crafting", "advanced_circuit"),
 					});
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(electricPlasmaGun), new Object[]
-				{
-					"TSB",
-					"OOC",
-					"TSD",
-					'S', ItemCraftingManager.niobium_titanium_plate,
-					'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
-					'O', IC2Items.getItem("crafting", "coil"),
-					'J', IC2Items.getItem("iridium_reflector"),
-					'T', IC2Items.getItem("upgrade", "ejector"),
-					'C', Recipes.inputFactory.forOreDict("circuitElite"),
-					'D', getAllTypeStack(electricSubmachineGun)
-					});
+		// 移除 ElectricPlasmaGun 合成配方
+		// Recipes.advRecipes.addRecipe(new ItemStack(electricPlasmaGun), new Object[]
+		// 		{
+		// 			"TSB",
+		// 			"OOC",
+		// 			"TSD",
+		// 			'S', ItemCraftingManager.niobium_titanium_plate,
+		// 			'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
+		// 			'O', IC2Items.getItem("crafting", "coil"),
+		// 			'J', IC2Items.getItem("iridium_reflector"),
+		// 			'T', IC2Items.getItem("upgrade", "ejector"),
+		// 			'C', Recipes.inputFactory.forOreDict("circuitElite"),
+		// 			'D', getAllTypeStack(electricSubmachineGun)
+		// 			});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(tachyonDisruptor), new Object[]
 				{

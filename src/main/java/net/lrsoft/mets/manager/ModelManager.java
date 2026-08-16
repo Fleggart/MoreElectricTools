@@ -92,8 +92,9 @@ public class ModelManager {
 				new ModelResourceLocation(ItemManager.advancedElectricSubmachineGun.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricRocketLauncher, 0,
 				new ModelResourceLocation(ItemManager.electricRocketLauncher.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemManager.electricPlasmaGun, 0,
-				new ModelResourceLocation(ItemManager.electricPlasmaGun.getRegistryName(), "inventory"));
+		// 移除 ElectricPlasmaGun 模型加载
+		// ModelLoader.setCustomModelResourceLocation(ItemManager.electricPlasmaGun, 0,
+		// 		new ModelResourceLocation(ItemManager.electricPlasmaGun.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.tachyonDisruptor, 0,
 				new ModelResourceLocation(ItemManager.tachyonDisruptor.getRegistryName(), "inventory"));
 		
@@ -122,6 +123,7 @@ public class ModelManager {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticAntenna), 0, new ModelResourceLocation(BlockManager.geomagneticAntenna.getRegistryName(),"normal"));
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLighterBlock.class, new LighterRenderer());
+		//ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWirelessPowerTransmissionNode.class, new TransmissionNodeRenderer());
 	}
 	@SubscribeEvent
 	public static void onFluidModelInit(ModelRegistryEvent event)

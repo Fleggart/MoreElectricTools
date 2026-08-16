@@ -105,10 +105,6 @@ public class ModelManager {
 		ModelLoader.setCustomModelResourceLocation(ItemManager.tachyonDisruptor, 0,
 				new ModelResourceLocation(ItemManager.tachyonDisruptor.getRegistryName(), "inventory"));
 		
-		ModelLoader.setCustomModelResourceLocation(ItemManager.titaniumIronAlloyRotor, 0,
-				new ModelResourceLocation(ItemManager.titaniumIronAlloyRotor.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemManager.superIridiumRotor, 0,
-				new ModelResourceLocation(ItemManager.superIridiumRotor.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.tacticalLaserSubmachineGun, 0,
 				new ModelResourceLocation(ItemManager.tacticalLaserSubmachineGun.getRegistryName(), "inventory"));
 		

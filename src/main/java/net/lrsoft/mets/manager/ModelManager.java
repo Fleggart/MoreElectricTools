@@ -8,17 +8,10 @@ import net.lrsoft.mets.blade.RenderDriveEx;
 import net.lrsoft.mets.blade.RenderSlashDimensionEx;
 import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;
 import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;
-import net.lrsoft.mets.entity.EntityGunBullet;
-import net.lrsoft.mets.entity.EntityHyperGunBullet;
-import net.lrsoft.mets.entity.EntityPlasmaBullet;
-import net.lrsoft.mets.entity.EntityRocket;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.blade.BladeModelManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.renderer.BulletRenderer;
 import net.lrsoft.mets.renderer.LighterRenderer;
-import net.lrsoft.mets.renderer.PlasmaBulletRenderer;
-import net.lrsoft.mets.renderer.RocketRender;
 import net.lrsoft.mets.renderer.TransmissionNodeRenderer;
 import net.lrsoft.mets.renderer.particle.EntityParticleGroup;
 import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
@@ -86,6 +79,7 @@ public class ModelManager {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticAntenna), 0, new ModelResourceLocation(BlockManager.geomagneticAntenna.getRegistryName(),"normal"));
         
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLighterBlock.class, new LighterRenderer());
+        // ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWirelessPowerTransmissionNode.class, new TransmissionNodeRenderer());
     }
     
     @SubscribeEvent

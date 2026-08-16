@@ -20,8 +20,6 @@ import net.lrsoft.mets.item.bauble.ItemBaublesManager;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.reactor.ReactorItemManager;
-import net.lrsoft.mets.item.rotor.SuperIridiumRotor;
-import net.lrsoft.mets.item.rotor.TitaniumIronAlloyRotor;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.AdvancedIridiumSword;
 import net.lrsoft.mets.item.weapon.ElectricPlasmaGun;
@@ -78,9 +76,6 @@ public class ItemManager {
 	public static ElectricPlasmaGun electricPlasmaGun;
 	public static TachyonDisruptor tachyonDisruptor;
 	
-	public static TitaniumIronAlloyRotor titaniumIronAlloyRotor;
-	public static SuperIridiumRotor superIridiumRotor;
-	
 	static 
 	{
 		superLapotronCrystal = new SuperLapotronCrystal();
@@ -108,9 +103,6 @@ public class ItemManager {
 		electricRocketLauncher = new ElectricRocketLauncher();
 		electricPlasmaGun = new ElectricPlasmaGun();
 		tachyonDisruptor = new TachyonDisruptor();
-		
-		titaniumIronAlloyRotor = new TitaniumIronAlloyRotor();
-		superIridiumRotor = new SuperIridiumRotor();
 	}
 	
 	@SubscribeEvent
@@ -139,9 +131,6 @@ public class ItemManager {
 		event.getRegistry().register(electricPlasmaGun);
 		event.getRegistry().register(electricWirlessManager);
 		event.getRegistry().register(tachyonDisruptor);
-		
-		event.getRegistry().register(titaniumIronAlloyRotor);
-		event.getRegistry().register(superIridiumRotor);
 		
 		OreDictionary.registerOre("superLapotronCrystal", superLapotronCrystal);
 		OreDictionary.registerOre("advancedLithiumBattery", advancedLithiumBattery);
@@ -291,24 +280,6 @@ public class ItemManager {
 						'B', getAllTypeStack(lithiumBattery),
 						'D', IC2Items.getItem("crafting", "power_unit"),
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(titaniumIronAlloyRotor), 
-				new Object[] {
-						" B ",
-						"BHB",
-						" B ",
-						'H', Recipes.inputFactory.forOreDict("shaftTitanium"),
-						'B', getAllTypeStack(ItemCraftingManager.titanium_iron_rotor_blade)
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(superIridiumRotor), 
-				new Object[] {
-						" B ",
-						"BHB",
-						" B ",
-						'H', Recipes.inputFactory.forOreDict("shaftTitanium"),
-						'B', getAllTypeStack(ItemCraftingManager.super_iridium_blade)
 				});
 		
 		if(ConfigManager.EnableElectricFirstAidLifeSupportRecipe)

@@ -7,12 +7,12 @@ import net.lrsoft.mets.blade.EntitySlashDimensionEx;
 import net.lrsoft.mets.blade.RenderDriveEx;
 import net.lrsoft.mets.blade.RenderSlashDimensionEx;
 import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;
-import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;
+// import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;  // 已移除
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.blade.BladeModelManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.renderer.LighterRenderer;
-import net.lrsoft.mets.renderer.TransmissionNodeRenderer;
+// import net.lrsoft.mets.renderer.TransmissionNodeRenderer;  // 已移除
 import net.lrsoft.mets.renderer.particle.EntityParticleGroup;
 import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
 import net.lrsoft.mets.renderer.particle.InstantParticleRender;
@@ -73,6 +73,7 @@ public class ModelManager {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticAntenna), 0, new ModelResourceLocation(BlockManager.geomagneticAntenna.getRegistryName(),"normal"));
         
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLighterBlock.class, new LighterRenderer());
+        // ========== 已移除无线传输节点渲染器 ==========
         // ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWirelessPowerTransmissionNode.class, new TransmissionNodeRenderer());
     }
     

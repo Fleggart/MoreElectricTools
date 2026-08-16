@@ -56,7 +56,6 @@ item.mets.crafting.thorium_scrap.name=§b钍废料盒
 
 item.mets.super_lapotron_crystal.name=§b超级兰波顿水晶
 item.mets.charging_super_lapotron_crystal.name=§b超级兰波顿充电电池
-item.mets.advanced_iridium_sword.name=§b量子剑
 item.mets.advanced_lithium_battery.name=高级锂电池
 item.mets.lithium_battery.name=锂电池
 item.mets.thorium_battery.name=钍电池
@@ -65,8 +64,6 @@ item.mets.electric_submachine_gun.name=电力激光镭射步枪
 item.mets.advanced_electric_submachine_gun.name=§b进阶电力激光镭射步枪
 item.mets.tactical_laser_submachine_gun.name=§b铱制刺刀战术激光镭射步枪
 item.mets.electric_rocket_launcher.name=火箭筒
-item.mets.electric_plasma_gun.name=§e电力等离子电浆发射器
-item.mets.tachyon_disruptor.name=§5先进速子裂解枪
 
 item.mets.electric_first_aid_life_support.name=电力生命维护仪
 item.mets.electric_nutrition_supply.name=电力营养供应器
@@ -77,34 +74,6 @@ item.mets.electric_wirless_manager.name=无线管理器
 item.mets.geomagnetic_detector.name=地磁探测器
 
 mets.electric_shield.name=钢制防爆盾
-item.mets.nano_bow.name=§e纳米复合弓
-item.mets.plasma_air_cannon.name=§e等离子空气炮
-item.mets.diving_mask.name=潜水面具
-item.mets.advanced_quantum_chest.name=§b进阶量子胸甲
-item.mets.advanced_jetpack.name=进阶电力超频喷气背包
-item.mets.heavy_quantum_chest.name=§b重型量子胸甲
-
-item.mets.titanium_iron_alloy_rotor.name=钛铁合金转子
-item.mets.super_iridium_rotor.name=§b超级铱合金转子
-
-item.mets.advanced_oc_heat_vent.name=§b铱金超频散热器
-item.mets.advanced_heat_vent.name=§b铱金散热器
-
-item.mets.electric_fire_proof_necklace.name=电力防火项链
-item.mets.energy_crystal_belt.name=能量水晶电池腰带
-item.mets.lapotron_crystal_belt.name=§e兰波顿电池腰带
-item.mets.electric_life_support_ring.name=§b终极维生指环
-item.mets.electric_flight_ring.name=§b电力飞行指环
-
-item.mets.iron_rich_seed.name=富铁种子
-item.mets.copper_rich_seed.name=富铜种子
-item.mets.tin_rich_seed.name=富锡种子
-item.mets.titanium_rich_seed.name=富钛种子
-item.mets.uranium_rich_seed.name=富铀种子
-item.mets.lead_rich_seed.name=富铅种子
-
-entity.Villager.smelter=冶炼学家
-entity.Villager.toolTrader=工业工具商
 
 mets.te.lesu=LESU储电箱
 mets.te.eesu=§9EESU储电箱

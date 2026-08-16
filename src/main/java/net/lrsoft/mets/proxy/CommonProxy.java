@@ -3,7 +3,6 @@ import java.util.Set;
 
 import net.lrsoft.mets.MoreElectricTools;
 import net.lrsoft.mets.block.MetsBlockWithTileEntity;
-import net.lrsoft.mets.crop.CropManager;
 import net.lrsoft.mets.manager.BlockManager;
 import net.lrsoft.mets.manager.ConfigManager;
 import net.lrsoft.mets.manager.FluidManager;
@@ -28,7 +27,6 @@ public class CommonProxy
 		MetsBlockWithTileEntity.buildDummies();
 		BlockManager.onBlockRecipeInit();
 		FluidManager.onRecipeInit();
-		CropManager.onRecipeInit();
 		OreDictManager.onOreDictInit();
 		if(ConfigManager.EnableOreGenerate)
 		{
@@ -41,4 +39,3 @@ public class CommonProxy
 
 	}
 }
-

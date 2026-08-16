@@ -4,7 +4,6 @@ import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
 import net.lrsoft.mets.item.battery.AdvancedLithiumBattery;
-import net.lrsoft.mets.item.battery.ChargingSuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.LithiumBattery;
 import net.lrsoft.mets.item.battery.SuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.ThoriumBattery;
@@ -24,7 +23,6 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ItemManager {
     
     public static SuperLapotronCrystal superLapotronCrystal;
-    public static ChargingSuperLapotronCrystal chargingSuperLapotronCrystal;
     public static AdvancedLithiumBattery advancedLithiumBattery;
     public static LithiumBattery lithiumBattery;
     public static ThoriumBattery thoriumBattery;
@@ -32,7 +30,6 @@ public class ItemManager {
     
     static {
         superLapotronCrystal = new SuperLapotronCrystal();
-        chargingSuperLapotronCrystal = new ChargingSuperLapotronCrystal();
         
         advancedLithiumBattery = new AdvancedLithiumBattery();
         lithiumBattery = new LithiumBattery();
@@ -43,7 +40,6 @@ public class ItemManager {
     @SubscribeEvent
     public static void onItemInit(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(superLapotronCrystal);
-        event.getRegistry().register(chargingSuperLapotronCrystal);
         event.getRegistry().register(advancedLithiumBattery);
         event.getRegistry().register(lithiumBattery);
         event.getRegistry().register(thoriumBattery);
@@ -103,16 +99,6 @@ public class ItemManager {
                         'S', IC2Items.getItem("casing", "lead"),
                         'L', Recipes.inputFactory.forOreDict("dustThorium")
                 });
-        
-        Recipes.advRecipes.addRecipe(new ItemStack(chargingSuperLapotronCrystal), new Object[] {
-                "EBS",
-                "BOB",
-                "SBE",
-                'B', getAllTypeStack(ItemManager.superLapotronCrystal),
-                'E', IC2Items.getItem("crafting", "advanced_circuit"),
-                'S', IC2Items.getItem("advanced_heat_exchanger"),
-                'O', getAllTypeStack(IC2Items.getItem("charging_lapotron_crystal"))
-        });
         
         // Other
         try {

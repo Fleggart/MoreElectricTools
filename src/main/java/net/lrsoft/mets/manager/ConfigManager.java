@@ -29,10 +29,11 @@ public class ConfigManager {
 	 @Config.RequiresWorldRestart
 	 public static float AdvancedIridiumSwordBaseAttackDamage = 25f;
 	 
-	 @Config.RequiresWorldRestart
-	 public static double NanoBowBaseCost = 300d;
-	 @Config.RequiresWorldRestart
-	 public static float NanoBowMaxVelocity = 5.0f;
+	 // 移除 NanoBow 配置
+	 // @Config.RequiresWorldRestart
+	 // public static double NanoBowBaseCost = 300d;
+	 // @Config.RequiresWorldRestart
+	 // public static float NanoBowMaxVelocity = 5.0f;
 
 	 @Config.RequiresWorldRestart
 	 public static double ElectricNutritionSupplyCost = 200d;

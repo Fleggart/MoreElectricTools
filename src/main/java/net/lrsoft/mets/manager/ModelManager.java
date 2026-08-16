@@ -58,8 +58,6 @@ public class ModelManager {
                 new ModelResourceLocation(ItemManager.thoriumBattery.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemManager.electricWirlessManager, 0,
                 new ModelResourceLocation(ItemManager.electricWirlessManager.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemManager.geomagneticDetector, 0,
-                new ModelResourceLocation(ItemManager.geomagneticDetector.getRegistryName(), "inventory"));
         
         ItemCraftingManager.onCraftingItemModelInit();
 

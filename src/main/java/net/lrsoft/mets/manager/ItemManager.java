@@ -32,7 +32,7 @@ public class ItemManager {
     public static ThoriumBattery thoriumBattery;
     
     public static ElectricWirlessManager electricWirlessManager;
-    public static GeomagneticDetector geomagneticDetector;
+    
     
     static {
         superLapotronCrystal = new SuperLapotronCrystal();
@@ -43,7 +43,7 @@ public class ItemManager {
         thoriumBattery = new ThoriumBattery();
         
         electricWirlessManager = new ElectricWirlessManager();
-        geomagneticDetector = new GeomagneticDetector();
+        
     }
     
     @SubscribeEvent
@@ -53,7 +53,7 @@ public class ItemManager {
         event.getRegistry().register(advancedLithiumBattery);
         event.getRegistry().register(lithiumBattery);
         event.getRegistry().register(thoriumBattery);
-        event.getRegistry().register(geomagneticDetector);
+        
         event.getRegistry().register(electricWirlessManager);
         
         OreDictionary.registerOre("superLapotronCrystal", superLapotronCrystal);

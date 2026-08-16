@@ -18,7 +18,6 @@ import net.lrsoft.mets.item.bauble.ItemBaublesManager;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.blade.BladeModelManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.item.reactor.ReactorItemManager;
 import net.lrsoft.mets.renderer.BulletRenderer;
 import net.lrsoft.mets.renderer.LighterRenderer;
 import net.lrsoft.mets.renderer.PlasmaBulletRenderer;
@@ -111,7 +110,6 @@ public class ModelManager {
 		ItemManager.electricShield.setTileEntityItemStackRenderer(new net.lrsoft.mets.renderer.NanoShieldRenderer());
 		
 		ItemCraftingManager.onCraftingItemModelInit();
-		ReactorItemManager.onItemModelInit();
 
 		if (Loader.isModLoaded(Baubles.MODID))
 		{

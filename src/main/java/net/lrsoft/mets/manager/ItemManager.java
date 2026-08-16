@@ -19,7 +19,6 @@ import net.lrsoft.mets.item.battery.ThoriumBattery;
 import net.lrsoft.mets.item.bauble.ItemBaublesManager;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.item.reactor.ReactorItemManager;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.AdvancedIridiumSword;
 import net.lrsoft.mets.item.weapon.ElectricPlasmaGun;
@@ -137,11 +136,9 @@ public class ItemManager {
 		OreDictionary.registerOre("lithiumBattery", lithiumBattery);
 		
 		ItemCraftingManager.onCraftingItemInit(event);
-		ReactorItemManager.onItemInit(event);
 		
 		onRecipeInit();
 		ItemCraftingManager.onCraftingItemRecipeInit();
-		ReactorItemManager.onItemRecipeInit();
 		
 		if (Loader.isModLoaded(Baubles.MODID)) 
 		{
@@ -354,7 +351,7 @@ public class ItemManager {
 				"BOB",
 				"SBE",
 				'B', getAllTypeStack(ItemManager.superLapotronCrystal),
-				'E', ReactorItemManager.advHeatVent,
+				'E', IC2Items.getItem("crafting", "advanced_circuit"),
 				'S', IC2Items.getItem("advanced_heat_exchanger"),
 				'O', getAllTypeStack(IC2Items.getItem("charging_lapotron_crystal"))
 				});

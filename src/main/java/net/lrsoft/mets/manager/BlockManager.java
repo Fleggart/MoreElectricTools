@@ -22,7 +22,6 @@ import net.lrsoft.mets.block.UniformResourceBlock;
 import net.lrsoft.mets.block.tileentity.IMets;
 import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.item.reactor.ReactorItemManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -145,7 +144,7 @@ public class BlockManager {
 						"BCB",
 						'A', IC2Items.getItem("te", "mfsu"),
 						'B', getAllTypeStack(ItemManager.superLapotronCrystal),
-						'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		//if(ConfigManager.EnableMoreKineticGenerator)
@@ -171,7 +170,7 @@ public class BlockManager {
 							'S', IC2Items.getItem("crafting", "iridium"),
 							'G', advancedKineticGenerator,
 							'M', IC2Items.getItem("crafting", "electric_motor"),
-							'E', ReactorItemManager.advOCHeatVent
+							'E', IC2Items.getItem("advanced_heat_exchanger")
 					});			
 		//}
 
@@ -182,7 +181,7 @@ public class BlockManager {
 						"SMS",
 						"SCS",
 						'M', IC2Items.getItem("te", "blast_furnace"),
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
 						'C', IC2Items.getItem("advanced_heat_exchanger")
 				});
 		
@@ -194,9 +193,9 @@ public class BlockManager {
 						"BMB",
 						" C ",
 						'M', IC2Items.getItem("te", "macerator"),
-						'B', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+						'B', Recipes.inputFactory.forOreDict("plateTitanium"),
 						'D', Items.DIAMOND,
-						'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		ItemStack advancedCompressor = teBlock.getItemStack(MetsBlockWithTileEntity.advanced_compressor);
@@ -206,8 +205,8 @@ public class BlockManager {
 						"BMB",
 						"BCB",
 						'M', IC2Items.getItem("te", "compressor"),
-						'B', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
-						'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'B', Recipes.inputFactory.forOreDict("plateTitanium"),
+						'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		ItemStack charpad_eesu = teBlock.getItemStack(MetsBlockWithTileEntity.chargepad_eesu);
@@ -219,7 +218,7 @@ public class BlockManager {
 						'S', IC2Items.getItem("crafting", "rubber"),
 						'P', Item.getItemFromBlock(Blocks.STONE_PRESSURE_PLATE),
 						'M', eesuStorage,
-						'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		ItemStack charpad_lesu = teBlock.getItemStack(MetsBlockWithTileEntity.chargepad_lesu);
@@ -242,7 +241,7 @@ public class BlockManager {
 							"SPS",
 							"SMS",
 							"SSS",
-							'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
+							'S', Recipes.inputFactory.forOreDict("casingTitanium"),
 							'P', IC2Items.getItem("advanced_heat_exchanger"),
 							'M', IC2Items.getItem("te", "stirling_generator")
 					});			
@@ -254,8 +253,8 @@ public class BlockManager {
 						"SPS",
 						"MEM",
 						"SCS",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'E', IC2Items.getItem("advanced_heat_exchanger"),
 						'M', IC2Items.getItem("te", "semifluid_generator"),
 						'P', IC2Items.getItem("upgrade", "fluid_pulling")
@@ -271,8 +270,8 @@ public class BlockManager {
 						"SKS",
 						"GMG",
 						"SCS",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'M', IC2Items.getItem("te", "metal_former"),
 						'K', IC2Items.getItem("cutter"),
 						'G', IC2Items.getItem("crafting", "electric_motor")
@@ -283,8 +282,8 @@ public class BlockManager {
 						"SKS",
 						"GMG",
 						"SCS",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'M', IC2Items.getItem("te", "metal_former"),
 						'K', IC2Items.getItem("forge_hammer"),
 						'G', IC2Items.getItem("crafting", "electric_motor")
@@ -296,8 +295,8 @@ public class BlockManager {
 						"SKS",
 						"GMG",
 						"SCS",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'M', IC2Items.getItem("te", "metal_former"),
 						'K', IC2Items.getItem("block_cutting_blade", "diamond"),
 						'G', IC2Items.getItem("crafting", "electric_motor")
@@ -309,8 +308,8 @@ public class BlockManager {
 						"PSP",
 						"S S",
 						"PSP",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
-						'P', Recipes.inputFactory.forOreDict("plateTitanium")//ItemCraftingManager.titanium_plate
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
+						'P', Recipes.inputFactory.forOreDict("plateTitanium")
 				});
 		
 		
@@ -320,9 +319,9 @@ public class BlockManager {
 						"SMS",
 						"BCB",
 						"SMS",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
 						'M', lootGenerator,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'B', getAllTypeStack(IC2Items.getItem("energy_crystal"))
 				});
 		
@@ -334,7 +333,7 @@ public class BlockManager {
 						"CBC",
 						'P', IC2Items.getItem("crafting", "carbon_plate"),
 						'G', IC2Items.getItem("te", "solar_generator"),
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'B', getAllTypeStack(ItemManager.advancedLithiumBattery)
 				});
 		
@@ -344,10 +343,10 @@ public class BlockManager {
 						"TCT",
 						"GSK",
 						"TBT",
-						'T', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_plate,
-						'S', Recipes.inputFactory.forOreDict("shaftTitanium"),//ItemCraftingManager.titanium_shaft, 
+						'T', Recipes.inputFactory.forOreDict("casingTitanium"),
+						'S', Recipes.inputFactory.forOreDict("shaftTitanium"),
 						'G', IC2Items.getItem("te", "semifluid_generator"),
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'K', IC2Items.getItem("te", "kinetic_generator"),
 						'B', getAllTypeStack(IC2Items.getItem("energy_crystal"))
 				});
@@ -360,7 +359,7 @@ public class BlockManager {
 						"PCP",
 						'P', ItemCraftingManager.super_iridium_compress_plate,
 						'G', advanced_solar_generator,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'B', getAllTypeStack(ItemManager.superLapotronCrystal)
 				});
 		
@@ -373,7 +372,7 @@ public class BlockManager {
 						'T', IC2Items.getItem("te", "hv_transformer"),
 						'C', IC2Items.getItem("te", "tesla_coil"),
 						'B', getAllTypeStack(ItemManager.superLapotronCrystal),
-						'S', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'S', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		ItemStack ultimate_solar_generator = teBlock.getItemStack(MetsBlockWithTileEntity.ultimate_photon_resonance_solar_generator);
@@ -409,7 +408,7 @@ public class BlockManager {
 						"TTT",
 						'T', titaniumBlock,
 						'S', IC2Items.getItem("te", "geo_generator"),
-						'C', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'G', ItemCraftingManager.field_generator
 				});
 		
@@ -420,7 +419,7 @@ public class BlockManager {
 						"SGS",
 						"ACA",
 						'A', ItemCraftingManager.nano_living_metal,
-						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'G', superKineticGenerator,
 						'B', eesuStorage,
 						'C', geomagnetic_antenna
@@ -433,7 +432,7 @@ public class BlockManager {
 						"RBM",
 						"FSF",
 						'F', ItemCraftingManager.field_generator,
-						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'R', IC2Items.getItem("te", "replicator"),
 						'M', IC2Items.getItem("te", "matter_generator"),
 						'B', eesuStorage
@@ -447,7 +446,7 @@ public class BlockManager {
 						"CFC",
 						'F', ItemCraftingManager.field_generator,
 						'C', ItemCraftingManager.neutron_plate, 
-						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'B', advancedBlastFurnace,
 						'R', IC2Items.getItem("te", "electric_heat_generator")
 				});
@@ -461,7 +460,7 @@ public class BlockManager {
 						"PIP",
 						'C', ItemCraftingManager.field_generator,
 						'F', ItemCraftingManager.neutron_plate, 
-						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'B', eesuStorage,
 						'P', ItemCraftingManager.super_iridium_compress_plate,
 						'I', IC2Items.getItem("te", "ev_transformer")
@@ -475,7 +474,7 @@ public class BlockManager {
 						"CFC",
 						'C', ItemCraftingManager.field_generator,
 						'F', ItemCraftingManager.neutron_plate, 
-						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'B', eesuStorage,
 						'P', ItemCraftingManager.super_iridium_compress_plate,
 						'I', IC2Items.getItem("te", "ev_transformer")
@@ -504,7 +503,7 @@ public class BlockManager {
 						"STB",
 						" C ",
 						'C', IC2Items.getItem("cable", "type:glass,insulation:0"),
-						'S', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitElite"),
 						'T', IC2Items.getItem("te", "ev_transformer"),
 						'B', getAllTypeStack(ItemManager.superLapotronCrystal)
 				});
@@ -515,7 +514,7 @@ public class BlockManager {
 						"STB",
 						" C ",
 						'C', ItemCraftingManager.superconducting_cable,
-						'S', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitElite"),
 						'T', transformer_iv,
 						'B', eesuStorage
 				});
@@ -529,7 +528,7 @@ public class BlockManager {
 						'B', getAllTypeStack(ItemManager.superLapotronCrystal),
 						'T', transformer_luv,
 						'M', gesu_output,
-						'I', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.living_circuit
+						'I', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		//oil rig 
@@ -539,7 +538,7 @@ public class BlockManager {
 						"PPP",
 						"TTT",
 						"PPP",
-						'P', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+						'P', Recipes.inputFactory.forOreDict("plateTitanium"),
 						'T', titaniumBlock
 				});
 		
@@ -575,7 +574,7 @@ public class BlockManager {
 						"CSC",
 						"MCM",
 						'C', oil_rig_core,
-						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitUltimate"),
 						'M', ItemCraftingManager.nano_living_metal
 				});
 		
@@ -597,7 +596,7 @@ public class BlockManager {
 						"GGG",
 						"TMT",
 						"GGG",
-						'G', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
+						'G', Recipes.inputFactory.forOreDict("casingTitanium"),
 						'T', Items.BUCKET,
 						'M',  IC2Items.getItem("resource", "machine")
 				});
@@ -608,7 +607,7 @@ public class BlockManager {
 						"GCG",
 						"TMT",
 						"GCG",
-						'G', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+						'G', Recipes.inputFactory.forOreDict("plateTitanium"),
 						'C', IC2Items.getItem("crafting", "advanced_circuit"),
 						'T', Items.BUCKET,
 						'M', oil_rig_base
@@ -618,7 +617,7 @@ public class BlockManager {
 						"GCG",
 						"TMT",
 						"GCG",
-						'G', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+						'G', Recipes.inputFactory.forOreDict("plateTitanium"),
 						'C', IC2Items.getItem("crafting", "advanced_circuit"),
 						'T', titanium_tank,
 						'M', oil_rig_base
@@ -632,7 +631,7 @@ public class BlockManager {
 						"NBN",
 						'N', ItemCraftingManager.niobium_titanium_plate,
 						'P', IC2Items.getItem("te", "luminator_flat"),
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'M', oil_rig_base,
 						'B', getAllTypeStack(ItemManager.advancedLithiumBattery)
 				});
@@ -646,7 +645,7 @@ public class BlockManager {
 						"ISI",
 						'I', IC2Items.getItem("crafting", "iridium"),
 						'S', IC2Items.getItem("resource", "advanced_machine"),
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'M', IC2Items.getItem("te", "matter_generator")
 				});
 		
@@ -659,7 +658,7 @@ public class BlockManager {
 						'I', IC2Items.getItem("crafting", "iridium"),
 						'M', IC2Items.getItem("te", "ev_transformer"),
 						'C', IC2Items.getItem("resource", "advanced_machine"),
-						'S', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitElite"),
 						'B', getAllTypeStack(ItemManager.superLapotronCrystal)
 				});
 		
@@ -672,7 +671,7 @@ public class BlockManager {
 						'I', ItemCraftingManager.niobium_titanium_plate,
 						'M', titanium_tank,
 						'C', IC2Items.getItem("resource", "advanced_machine"),
-						'S', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'S', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		ItemStack fabricator_scrap = teBlock.getItemStack(MetsBlockWithTileEntity.fabricator_scrap);
@@ -684,7 +683,7 @@ public class BlockManager {
 						'I', ItemCraftingManager.niobium_titanium_plate,
 						'M', IC2Items.getItem("te", "recycler"),
 						'C', IC2Items.getItem("resource", "advanced_machine"),
-						'S', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'S', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		ItemStack laser_tower = teBlock.getItemStack(MetsBlockWithTileEntity.laser_tower);
@@ -697,7 +696,7 @@ public class BlockManager {
 						'S', ItemCraftingManager.lens,
 						'J', IC2Items.getItem("neutron_reflector"),
 						'E', IC2Items.getItem("te", "cesu"),
-						'C', Recipes.inputFactory.forOreDict("circuitAdvanced")//ic2 advanced circuit
+						'C', Recipes.inputFactory.forOreDict("circuitAdvanced")
 				});
 		
 		ItemStack advanced_laser_tower = teBlock.getItemStack(MetsBlockWithTileEntity.advanced_laser_tower);
@@ -710,7 +709,7 @@ public class BlockManager {
 						'S', ItemCraftingManager.diamond_lens,
 						'M', laser_tower,
 						'E', IC2Items.getItem("te", "mfe"),
-						'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+						'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 	}
 	

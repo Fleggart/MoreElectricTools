@@ -16,7 +16,7 @@ import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
-import net.lrsoft.mets.item.weapon.ElectricShield;
+// import net.lrsoft.mets.item.weapon.ElectricShield;  // 删除这行
 import net.lrsoft.mets.item.weapon.ElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.TacticalLaserSubmachineGun;
 import net.lrsoft.mets.util.SpecialRecipesHelper;
@@ -46,7 +46,7 @@ public class ItemManager {
 	public static ThoriumBattery thoriumBattery;
 	
 	public static ElectricFishingRod electricFishingRod;
-	public static ElectricShield electricShield;
+	// public static ElectricShield electricShield;  // 删除这行
 	public static ElectricLighter electricLighter;
 	
 	public static ElectricWirlessManager electricWirlessManager;
@@ -66,7 +66,7 @@ public class ItemManager {
 		thoriumBattery = new ThoriumBattery();
 		
 		electricFishingRod = new ElectricFishingRod();
-		electricShield = new ElectricShield();
+		// electricShield = new ElectricShield();  // 删除这行
 		electricWirlessManager = new ElectricWirlessManager();
 		electricLighter = new ElectricLighter();
 		geomagneticDetector = new GeomagneticDetector();
@@ -86,7 +86,7 @@ public class ItemManager {
 		event.getRegistry().register(lithiumBattery);
 		event.getRegistry().register(thoriumBattery);
 		event.getRegistry().register(electricFishingRod);
-		event.getRegistry().register(electricShield);
+		// event.getRegistry().register(electricShield);  // 删除这行
 		event.getRegistry().register(electricSubmachineGun);
 		event.getRegistry().register(advancedElectricSubmachineGun);
 		event.getRegistry().register(tacticalLaserSubmachineGun);
@@ -164,16 +164,7 @@ public class ItemManager {
 						'D', IC2Items.getItem("crafting", "small_power_unit")
 				});
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(electricShield), 
-				new Object[] {
-						"SAS",
-						"SBS",
-						"SDS",
-						'S', IC2Items.getItem("plate", "steel"),
-						'B', getAllTypeStack(lithiumBattery),
-						'D', IC2Items.getItem("crafting", "power_unit"),
-						'A', IC2Items.getItem("crafting", "advanced_circuit")
-				});
+		// 删除 ElectricShield 的配方
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricSubmachineGun), new Object[]
 				{

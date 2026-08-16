@@ -3,11 +3,8 @@ package net.lrsoft.mets.manager;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.item.ElectricFirstAidLifeSupport;
 import net.lrsoft.mets.item.ElectricFishingRod;
-import net.lrsoft.mets.item.ElectricForceFieldGenerator;
 import net.lrsoft.mets.item.ElectricLighter;
-import net.lrsoft.mets.item.ElectricNutritionSupply;
 import net.lrsoft.mets.item.ElectricWirlessManager;
 import net.lrsoft.mets.item.GeomagneticDetector;
 import net.lrsoft.mets.item.battery.AdvancedLithiumBattery;
@@ -48,11 +45,14 @@ public class ItemManager {
 	public static LithiumBattery lithiumBattery;
 	public static ThoriumBattery thoriumBattery;
 	
-	public static ElectricFirstAidLifeSupport electricFirstAidLifeSupport;
-	public static ElectricNutritionSupply electricNutritionSupply;
+	// 移除 ElectricFirstAidLifeSupport
+	// public static ElectricFirstAidLifeSupport electricFirstAidLifeSupport;
+	// 移除 ElectricNutritionSupply
+	// public static ElectricNutritionSupply electricNutritionSupply;
 	public static ElectricFishingRod electricFishingRod;
 	public static ElectricShield electricShield;
-	public static ElectricForceFieldGenerator electricForceFieldGenerator;
+	// 移除 ElectricForceFieldGenerator
+	// public static ElectricForceFieldGenerator electricForceFieldGenerator;
 	public static ElectricLighter electricLighter;
 	
 	public static ElectricWirlessManager electricWirlessManager;
@@ -74,11 +74,14 @@ public class ItemManager {
 		lithiumBattery = new LithiumBattery();
 		thoriumBattery = new ThoriumBattery();
 		
-		electricFirstAidLifeSupport = new ElectricFirstAidLifeSupport();
-		electricNutritionSupply = new ElectricNutritionSupply();
+		// 移除 ElectricFirstAidLifeSupport 初始化
+		// electricFirstAidLifeSupport = new ElectricFirstAidLifeSupport();
+		// 移除 ElectricNutritionSupply 初始化
+		// electricNutritionSupply = new ElectricNutritionSupply();
 		electricFishingRod = new ElectricFishingRod();
 		electricShield = new ElectricShield();
-		electricForceFieldGenerator = new ElectricForceFieldGenerator();
+		// 移除 ElectricForceFieldGenerator 初始化
+		// electricForceFieldGenerator = new ElectricForceFieldGenerator();
 		electricWirlessManager = new ElectricWirlessManager();
 		// 移除 NanoBow 初始化
 		// nanoBow = new NanoBow();
@@ -99,17 +102,12 @@ public class ItemManager {
 		event.getRegistry().register(advancedLithiumBattery);
 		event.getRegistry().register(lithiumBattery);
 		event.getRegistry().register(thoriumBattery);
-		event.getRegistry().register(electricFirstAidLifeSupport);
-		event.getRegistry().register(electricNutritionSupply);
 		event.getRegistry().register(electricFishingRod);
 		event.getRegistry().register(electricShield);
-		// 移除 NanoBow 注册
-		// event.getRegistry().register(nanoBow);
 		event.getRegistry().register(electricSubmachineGun);
 		event.getRegistry().register(advancedElectricSubmachineGun);
 		event.getRegistry().register(tacticalLaserSubmachineGun);
 		event.getRegistry().register(electricRocketLauncher);
-		event.getRegistry().register(electricForceFieldGenerator);
 		event.getRegistry().register(electricLighter);
 		event.getRegistry().register(geomagneticDetector);
 		
@@ -173,22 +171,6 @@ public class ItemManager {
 						'L', Recipes.inputFactory.forOreDict("dustThorium")
 				});
 		
-		if(ConfigManager.EnableElectricNutritionSupplyCost)
-		{
-			Recipes.advRecipes.addRecipe(new ItemStack(electricNutritionSupply), 
-					new Object[] {
-							"SPS",
-							"HCH",
-							"SBS",
-							'P', IC2Items.getItem("treetap"),
-							'S', IC2Items.getItem("casing", "gold"),
-							'C', IC2Items.getItem("crafting", "circuit"),
-							'H', IC2Items.getItem("heat_exchanger"),
-							'B', getAllTypeStack(lithiumBattery)
-					});			
-		}
-
-		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricFishingRod), 
 				new Object[] {
 						" SL",
@@ -198,21 +180,6 @@ public class ItemManager {
 						'L', Items.STRING,
 						'D', IC2Items.getItem("crafting", "small_power_unit")
 				});
-		
-		// 移除 NanoBow 合成配方
-		/*
-		Recipes.advRecipes.addRecipe(new ItemStack(nanoBow), 
-				new Object[] {
-						"CMS",
-						"CBA",
-						"CMS",
-						'C', IC2Items.getItem("crafting", "carbon_plate"),
-						'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
-						'M', IC2Items.getItem("crafting", "electric_motor"),
-						'S', Items.LEAD,
-						'A', IC2Items.getItem("crafting", "advanced_circuit")
-				});
-		*/		
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricShield), 
 				new Object[] {
@@ -224,20 +191,6 @@ public class ItemManager {
 						'D', IC2Items.getItem("crafting", "power_unit"),
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
 				});
-		
-		if(ConfigManager.EnableElectricFirstAidLifeSupportRecipe)
-		{
-			Recipes.advRecipes.addRecipe(new ItemStack(electricFirstAidLifeSupport), 
-					new Object[] {
-							"ITI",
-							"MBM",
-							"ITI",
-							'M', getAllTypeStack(electricForceFieldGenerator),
-							'B', getAllTypeStack(IC2Items.getItem("lapotron_crystal")),
-							'I', IC2Items.getItem("crafting", "iridium"),
-							'T', Recipes.inputFactory.forOreDict("circuitElite")
-					});
-		}
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricSubmachineGun), new Object[]
 				{
@@ -290,17 +243,6 @@ public class ItemManager {
 				'O', getAllTypeStack(IC2Items.getItem("charging_lapotron_crystal"))
 				});
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(electricForceFieldGenerator), new Object[]
-				{
-				"SCS",
-				"MBM",
-				"SCS",
-				'S', Recipes.inputFactory.forOreDict("casingTitanium"),
-				'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
-				'M', getAllTypeStack(electricNutritionSupply),
-				'C', IC2Items.getItem("crafting", "advanced_circuit")
-				});
-		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricLighter), new Object[]
 			   {"NSB",
 				"LJC",
@@ -333,35 +275,6 @@ public class ItemManager {
 					'T', IC2Items.getItem("te", "tesla_coil"),
 					'C', IC2Items.getItem("crafting", "advanced_circuit"),
 					});
-		
-		// 移除 ElectricPlasmaGun 合成配方（已注释）
-		// Recipes.advRecipes.addRecipe(new ItemStack(electricPlasmaGun), new Object[]
-		// 		{
-		// 			"TSB",
-		// 			"OOC",
-		// 			"TSD",
-		// 			'S', ItemCraftingManager.niobium_titanium_plate,
-		// 			'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
-		// 			'O', IC2Items.getItem("crafting", "coil"),
-		// 			'J', IC2Items.getItem("iridium_reflector"),
-		// 			'T', IC2Items.getItem("upgrade", "ejector"),
-		// 			'C', Recipes.inputFactory.forOreDict("circuitElite"),
-		// 			'D', getAllTypeStack(electricSubmachineGun)
-		// 			});
-		
-		// 移除 TachyonDisruptor 合成配方（已注释）
-		// Recipes.advRecipes.addRecipe(new ItemStack(tachyonDisruptor), new Object[]
-		// 		{
-		// 			"OSB",
-		// 			"TTC",
-		// 			"OSD",
-		// 			'S', ItemCraftingManager.nano_living_metal,
-		// 			'B', getAllTypeStack(superLapotronCrystal),
-		// 			'O', ItemCraftingManager.neutron_plate,
-		// 			'T', ItemCraftingManager.field_generator,
-		// 			'C', Recipes.inputFactory.forOreDict("circuitUltimate"),
-		// 			'D', getAllTypeStack(tacticalLaserSubmachineGun)
-		// 			});
 		
 		//Other
 		try 

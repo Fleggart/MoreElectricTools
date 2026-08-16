@@ -47,8 +47,6 @@ public class ModelManager {
     public static void onItemModelInit(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(ItemManager.superLapotronCrystal, 0,
                 new ModelResourceLocation(ItemManager.superLapotronCrystal.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemManager.chargingSuperLapotronCrystal, 0,
-                new ModelResourceLocation(ItemManager.chargingSuperLapotronCrystal.getRegistryName(), "inventory"));
         
         ModelLoader.setCustomModelResourceLocation(ItemManager.advancedLithiumBattery, 0,
                 new ModelResourceLocation(ItemManager.advancedLithiumBattery.getRegistryName(), "inventory"));

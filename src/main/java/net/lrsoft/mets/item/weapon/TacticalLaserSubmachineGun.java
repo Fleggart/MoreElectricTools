@@ -1,14 +1,10 @@
 package net.lrsoft.mets.item.weapon;
 
 import ic2.api.item.ElectricItem;
-import net.lrsoft.mets.enchantment.EfficientEnergyCost;
-import net.lrsoft.mets.entity.EntityGunBullet;
 import net.lrsoft.mets.entity.EntityHyperGunBullet;
 import net.lrsoft.mets.item.UniformElectricItem;
 import net.lrsoft.mets.manager.ConfigManager;
-import net.lrsoft.mets.manager.EnchantmentManager;
 import net.lrsoft.mets.manager.SoundManager;
-import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,7 +16,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class TacticalLaserSubmachineGun extends UniformElectricItem {
@@ -37,8 +32,7 @@ public class TacticalLaserSubmachineGun extends UniformElectricItem {
 		long currentTime = System.currentTimeMillis();
 		if(currentTime - lastRightClick > 150)
 		{
-			float ratio = getElectricItemAttenuationRatio(currentGun);
-			if(ElectricItem.manager.use(currentGun, ConfigManager.TacticalLaserSubmachineGunCost * ratio, playerIn))
+			if(ElectricItem.manager.use(currentGun, ConfigManager.TacticalLaserSubmachineGunCost, playerIn))
 			{
 				EntityHyperGunBullet entity = new EntityHyperGunBullet(worldIn, playerIn, 50f, 360);
 				entity.shoot(playerIn.rotationYaw, playerIn.rotationPitch, 3.0f);
@@ -59,8 +53,7 @@ public class TacticalLaserSubmachineGun extends UniformElectricItem {
          {
 			EntityPlayer player = (EntityPlayer) attacker;
 			EntityLivingBase enemyEntity = (EntityLivingBase) targetEntity;
-			float ratio = getElectricItemAttenuationRatio(stack);
-			if (ElectricItem.manager.use(stack, ConfigManager.TacticalLaserSubmachineGunCost * ratio, player)) {
+			if (ElectricItem.manager.use(stack, ConfigManager.TacticalLaserSubmachineGunCost, player)) {
 				enemyEntity.knockBack(attacker, 1.0f, (double) MathHelper.sin(player.rotationYaw * 0.017453292F),
 						(double) (-MathHelper.cos(player.rotationYaw * 0.017453292F)));
 				enemyEntity.attackEntityFrom(DamageSource.causePlayerDamage(player), getAttackDamage(20.0f, stack));

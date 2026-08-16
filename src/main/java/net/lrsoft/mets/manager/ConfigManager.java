@@ -8,10 +8,6 @@ public class ConfigManager {
 	 @Config.RequiresMcRestart
 	 public static boolean WeaponDamagesTerrain = true;
 	 @Config.RequiresMcRestart
-	 public static boolean EnableElectricFirstAidLifeSupportRecipe = true;
-	 @Config.RequiresWorldRestart
-	 public static boolean EnableElectricNutritionSupplyCost = true;
-	 @Config.RequiresMcRestart
 	 public static boolean EnableOreGenerate = true;
 	 //@Config.RequiresMcRestart
 	 //public static boolean EnableMoreKineticGenerator = true;
@@ -28,18 +24,6 @@ public class ConfigManager {
 	 public static double AdvancedIridiumSwordBaseCost = 800d;
 	 @Config.RequiresWorldRestart
 	 public static float AdvancedIridiumSwordBaseAttackDamage = 25f;
-	 
-	 // 移除 NanoBow 配置
-	 // @Config.RequiresWorldRestart
-	 // public static double NanoBowBaseCost = 300d;
-	 // @Config.RequiresWorldRestart
-	 // public static float NanoBowMaxVelocity = 5.0f;
-
-	 @Config.RequiresWorldRestart
-	 public static double ElectricNutritionSupplyCost = 200d;
-
-	 @Config.RequiresWorldRestart
-	 public static double ElectricFirstAidLifeSupport = 10000d;
 	 
 	 @Config.RequiresWorldRestart
 	 public static double PlasmaAirCannonBaseCost = 1000d;
@@ -66,9 +50,6 @@ public class ConfigManager {
 	 
 	 @Config.RequiresWorldRestart
 	 public static double TacticalLaserSubmachineGunCost = 10000d;
-	 
-	 @Config.RequiresWorldRestart
-	 public static double ForceFieldCost = 5000d;
 	 
 	 @Config.RequiresWorldRestart
 	 public static double LaserTowerCost = 250d;

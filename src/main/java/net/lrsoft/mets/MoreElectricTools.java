@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+
 @Mod(modid = MoreElectricTools.MODID, name=MoreElectricTools.NAME,  version = MoreElectricTools.VERSION, dependencies = "required-after:ic2")
 public class MoreElectricTools
 {
@@ -31,7 +32,8 @@ public class MoreElectricTools
 		@Override
 		public ItemStack getTabIconItem() 
 		{
-			return new ItemStack(ItemManager.advancedIridiumSword);
+			// 使用 SuperLapotronCrystal 作为创造模式标签页图标，替代 AdvancedIridiumSword
+			return new ItemStack(ItemManager.superLapotronCrystal);
 		}
 	};
 
@@ -56,4 +58,3 @@ public class MoreElectricTools
     }
 
 }
-

@@ -60,9 +60,6 @@ public class ModelManager {
 		ModelLoader.setCustomModelResourceLocation(ItemManager.chargingSuperLapotronCrystal, 0,
 				new ModelResourceLocation(ItemManager.chargingSuperLapotronCrystal.getRegistryName(), "inventory"));
 		
-		ModelLoader.setCustomModelResourceLocation(ItemManager.advancedIridiumSword, 0,
-				new ModelResourceLocation(ItemManager.advancedIridiumSword.getRegistryName(), "inventory"));
-		
 		ModelLoader.setCustomModelResourceLocation(ItemManager.advancedLithiumBattery, 0,
 				new ModelResourceLocation(ItemManager.advancedLithiumBattery.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.lithiumBattery, 0,
@@ -108,7 +105,7 @@ public class ModelManager {
 		ItemManager.electricShield.setTileEntityItemStackRenderer(new net.lrsoft.mets.renderer.NanoShieldRenderer());
 		
 		ItemCraftingManager.onCraftingItemModelInit();
-		
+
 		if (Loader.isModLoaded("flammpfeil.slashblade")) 
 		{
 			BladeModelManager.onModelInit();

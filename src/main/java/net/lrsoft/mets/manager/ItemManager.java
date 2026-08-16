@@ -18,7 +18,6 @@ import net.lrsoft.mets.item.battery.ThoriumBattery;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
-import net.lrsoft.mets.item.weapon.AdvancedIridiumSword;
 import net.lrsoft.mets.item.weapon.ElectricPlasmaGun;
 import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
 import net.lrsoft.mets.item.weapon.ElectricShield;
@@ -49,7 +48,6 @@ public class ItemManager {
 	
 	public static SuperLapotronCrystal superLapotronCrystal;
 	public static ChargingSuperLapotronCrystal chargingSuperLapotronCrystal;
-	public static AdvancedIridiumSword advancedIridiumSword;
 	public static AdvancedLithiumBattery advancedLithiumBattery;
 	public static LithiumBattery lithiumBattery;
 	public static ThoriumBattery thoriumBattery;
@@ -77,7 +75,6 @@ public class ItemManager {
 	{
 		superLapotronCrystal = new SuperLapotronCrystal();
 		chargingSuperLapotronCrystal = new ChargingSuperLapotronCrystal();
-		advancedIridiumSword = new AdvancedIridiumSword();
 		
 		advancedLithiumBattery = new AdvancedLithiumBattery();
 		lithiumBattery = new LithiumBattery();
@@ -107,7 +104,6 @@ public class ItemManager {
 	{
 		event.getRegistry().register(superLapotronCrystal);
 		event.getRegistry().register(chargingSuperLapotronCrystal);
-		event.getRegistry().register(advancedIridiumSword);
 		event.getRegistry().register(advancedLithiumBattery);
 		event.getRegistry().register(lithiumBattery);
 		event.getRegistry().register(thoriumBattery);
@@ -153,29 +149,6 @@ public class ItemManager {
 						"SCS",
 						'S', ItemCraftingManager.niobium_titanium_plate,
 						'C', Recipes.inputFactory.forOreDict("circuitElite"),
-						'D', getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(advancedIridiumSword), 
-				new Object[] {
-						"SIS",
-						"SIS",
-						"CDC",
-						'S', IC2Items.getItem("casing", "steel"),
-						'I', IC2Items.getItem("crafting", "iridium"),
-						'C', ItemCraftingManager.niobium_titanium_plate,
-						'D', getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(advancedIridiumSword), 
-				new Object[] {
-						"SIS",
-						"SBS",
-						"CDC",
-						'S', IC2Items.getItem("casing", "steel"),
-						'I', IC2Items.getItem("crafting", "iridium"),
-						'B', getAllTypeStack(IC2Items.getItem("nano_saber")),
-						'C', ItemCraftingManager.niobium_titanium_plate,
 						'D', getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
 				});
 		
@@ -310,18 +283,6 @@ public class ItemManager {
 				'J', IC2Items.getItem("iridium_reflector"),
 				'C', Recipes.inputFactory.forOreDict("circuitElite"),
 				'D', getAllTypeStack(electricSubmachineGun)
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(tacticalLaserSubmachineGun), new Object[]
-				{
-				"SSB",
-				"LJC",
-				"SSB",
-				'S', ItemCraftingManager.super_iridium_compress_plate,
-				'B', getAllTypeStack(superLapotronCrystal),
-				'L', getAllTypeStack(advancedIridiumSword),
-				'J', getAllTypeStack(advancedElectricSubmachineGun),
-				'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricRocketLauncher), new Object[]

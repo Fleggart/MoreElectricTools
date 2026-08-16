@@ -66,8 +66,8 @@ public class ModelManager {
 				new ModelResourceLocation(ItemManager.thoriumBattery.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricFishingRod, 0,
 				new ModelResourceLocation(ItemManager.electricFishingRod.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemManager.electricShield, 0,
-				new ModelResourceLocation(ItemManager.electricShield.getRegistryName(), "inventory"));
+		// ModelLoader.setCustomModelResourceLocation(ItemManager.electricShield, 0,
+		//         new ModelResourceLocation(ItemManager.electricShield.getRegistryName(), "inventory"));  // 删除这行
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricLighter, 0,
 				new ModelResourceLocation(ItemManager.electricLighter.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricWirlessManager, 0,
@@ -86,7 +86,7 @@ public class ModelManager {
 		ModelLoader.setCustomModelResourceLocation(ItemManager.tacticalLaserSubmachineGun, 0,
 				new ModelResourceLocation(ItemManager.tacticalLaserSubmachineGun.getRegistryName(), "inventory"));
 		
-		ItemManager.electricShield.setTileEntityItemStackRenderer(new net.lrsoft.mets.renderer.NanoShieldRenderer());
+		// ItemManager.electricShield.setTileEntityItemStackRenderer(new net.lrsoft.mets.renderer.NanoShieldRenderer());  // 删除这行
 		
 		ItemCraftingManager.onCraftingItemModelInit();
 

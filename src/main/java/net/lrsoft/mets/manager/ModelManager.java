@@ -56,8 +56,6 @@ public class ModelManager {
                 new ModelResourceLocation(ItemManager.lithiumBattery.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemManager.thoriumBattery, 0,
                 new ModelResourceLocation(ItemManager.thoriumBattery.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemManager.electricWirlessManager, 0,
-                new ModelResourceLocation(ItemManager.electricWirlessManager.getRegistryName(), "inventory"));
         
         ItemCraftingManager.onCraftingItemModelInit();
 

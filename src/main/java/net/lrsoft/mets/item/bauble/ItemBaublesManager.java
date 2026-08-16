@@ -49,7 +49,7 @@ public class ItemBaublesManager {
 						"SSS",
 						"BCB",
 						"LSL",
-						'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
+						'S', Recipes.inputFactory.forOreDict("casingTitanium"),
 						'C', IC2Items.getItem("crafting", "advanced_circuit"),
 						'L', Items.BLAZE_ROD,
 						'B', ItemStackUtils.getAllTypeStack(ItemManager.lithiumBattery)
@@ -62,7 +62,7 @@ public class ItemBaublesManager {
 						"PSP",
 						'P', IC2Items.getItem("crafting", "carbon_plate"),
 						'S', IC2Items.getItem("crafting", "advanced_circuit"),
-						'C', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+						'C', Recipes.inputFactory.forOreDict("plateTitanium"),
 						'B', ItemStackUtils.getAllTypeStack(IC2Items.getItem("energy_crystal"))
 				});	
 		
@@ -72,7 +72,7 @@ public class ItemBaublesManager {
 						"BTB",
 						"PSP",
 						'P', ItemCraftingManager.niobium_titanium_plate,
-						'S', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'S', Recipes.inputFactory.forOreDict("circuitElite"),
 						'T', ItemStackUtils.getAllTypeStack(energyCrystalBelt),
 						'B', ItemStackUtils.getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
 				});	
@@ -90,17 +90,20 @@ public class ItemBaublesManager {
 						'B', ItemStackUtils.getAllTypeStack(ItemManager.superLapotronCrystal)
 				});	
 		
+		// electricFlightRing recipe removed because advancedJetPack was deleted
+		/* 
 		Recipes.advRecipes.addRecipe(new ItemStack(electricFlightRing), 
 				new Object[] {
 						"SCS",
 						"SBS",
 						"DJD",
 						'S', ItemCraftingManager.niobium_titanium_plate,
-						'C',  Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C',  Recipes.inputFactory.forOreDict("circuitElite"),
 						'B', ItemStackUtils.getAllTypeStack(IC2Items.getItem("lapotron_crystal")),
 						'D', IC2Items.getItem("dust", "energium"),
 						'J', ItemStackUtils.getAllTypeStack(ItemManager.advancedJetPack)
 				});	
+		*/
 	}
 	
 	public static void onBaublesModelInit()

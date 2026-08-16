@@ -12,7 +12,6 @@ import net.lrsoft.mets.entity.EntityGunBullet;
 import net.lrsoft.mets.entity.EntityHyperGunBullet;
 import net.lrsoft.mets.entity.EntityPlasmaBullet;
 import net.lrsoft.mets.entity.EntityRocket;
-import net.lrsoft.mets.entity.EntityTachyonBullet;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.blade.BladeModelManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
@@ -20,7 +19,6 @@ import net.lrsoft.mets.renderer.BulletRenderer;
 import net.lrsoft.mets.renderer.LighterRenderer;
 import net.lrsoft.mets.renderer.PlasmaBulletRenderer;
 import net.lrsoft.mets.renderer.RocketRender;
-import net.lrsoft.mets.renderer.TachyonRenderer;
 import net.lrsoft.mets.renderer.TransmissionNodeRenderer;
 import net.lrsoft.mets.renderer.particle.EntityParticleGroup;
 import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
@@ -92,11 +90,14 @@ public class ModelManager {
 				new ModelResourceLocation(ItemManager.advancedElectricSubmachineGun.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricRocketLauncher, 0,
 				new ModelResourceLocation(ItemManager.electricRocketLauncher.getRegistryName(), "inventory"));
+		
 		// 移除 ElectricPlasmaGun 模型加载
 		// ModelLoader.setCustomModelResourceLocation(ItemManager.electricPlasmaGun, 0,
 		// 		new ModelResourceLocation(ItemManager.electricPlasmaGun.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemManager.tachyonDisruptor, 0,
-				new ModelResourceLocation(ItemManager.tachyonDisruptor.getRegistryName(), "inventory"));
+		
+		// 移除 TachyonDisruptor 模型加载
+		// ModelLoader.setCustomModelResourceLocation(ItemManager.tachyonDisruptor, 0,
+		// 		new ModelResourceLocation(ItemManager.tachyonDisruptor.getRegistryName(), "inventory"));
 		
 		ModelLoader.setCustomModelResourceLocation(ItemManager.tacticalLaserSubmachineGun, 0,
 				new ModelResourceLocation(ItemManager.tacticalLaserSubmachineGun.getRegistryName(), "inventory"));
@@ -174,12 +175,13 @@ public class ModelManager {
 			}
 		});
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTachyonBullet.class, new IRenderFactory<EntityTachyonBullet>() {
-			public Render<EntityTachyonBullet> createRenderFor(RenderManager manager) {
-				return (Render<EntityTachyonBullet>) new TachyonRenderer(manager,
-						new ResourceLocation("mets", "textures/entity/tachyon.png"));
-			}
-		});
+		// 移除 TachyonBullet 渲染注册
+		// RenderingRegistry.registerEntityRenderingHandler(EntityTachyonBullet.class, new IRenderFactory<EntityTachyonBullet>() {
+		// 	public Render<EntityTachyonBullet> createRenderFor(RenderManager manager) {
+		// 		return (Render<EntityTachyonBullet>) new TachyonRenderer(manager,
+		// 				new ResourceLocation("mets", "textures/entity/tachyon.png"));
+		// 	}
+		// });
 		
 		if (Loader.isModLoaded("flammpfeil.slashblade")) 
 		{

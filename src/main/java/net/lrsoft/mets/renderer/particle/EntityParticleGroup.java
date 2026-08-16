@@ -7,7 +7,9 @@ import javax.annotation.Nullable;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 
-import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;
+// ========== 删除以下导入 ==========
+// import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -26,50 +28,49 @@ import net.minecraft.world.WorldServer;
 
 public class EntityParticleGroup extends Entity {
 
-	protected EntityPlayer shooter;
-	protected int ticksInAir;
-	protected int maxExistTicks;
-	protected int spawnParticles;
-	protected int spawnParticlesPerTick;
-	protected float velocity;
-	
-	public EntityParticleGroup(World world)
-	{
-		super(world);
-		this.ticksInAir = 0;
-		setSize(0.39F, 0.39F);
-		this.maxExistTicks = 0;
-		this.spawnParticles = 0;
-		this.spawnParticlesPerTick = 0;
-	}
-	
-	public EntityParticleGroup(World world, EntityPlayer owner,  int maxTick, int spawnParticles,int spawnParticlesPerTick) {
-		super(world);
-		this.ticksInAir = 0;
-		this.shooter = owner;
-		setSize(0.39F, 0.39F);
-	
-		setPosition(owner.posX, owner.posY + (double)shooter.getEyeHeight() - 0.1, owner.posZ);
-		this.maxExistTicks = maxTick;
-		this.spawnParticles = spawnParticles;
-		this.spawnParticlesPerTick = spawnParticlesPerTick;
-	}
-	
-	public EntityParticleGroup(World world,  Vec3d postion, int maxTick, int spawnParticles,int spawnParticlesPerTick) {
-		super(world);
-		this.ticksInAir = 0;
-		setSize(0.39F, 0.39F);
-		setPosition(postion.x, postion.y, postion.z);
-		this.maxExistTicks = maxTick;
-		this.spawnParticles = spawnParticles;
-		this.spawnParticlesPerTick = spawnParticlesPerTick;
-	}
-	
-	
-	@Override
-	public void onUpdate() 
-	{
-		super.onUpdate();
+    protected EntityPlayer shooter;
+    protected int ticksInAir;
+    protected int maxExistTicks;
+    protected int spawnParticles;
+    protected int spawnParticlesPerTick;
+    protected float velocity;
+
+    public EntityParticleGroup(World world)
+    {
+        super(world);
+        this.ticksInAir = 0;
+        setSize(0.39F, 0.39F);
+        this.maxExistTicks = 0;
+        this.spawnParticles = 0;
+        this.spawnParticlesPerTick = 0;
+    }
+
+    public EntityParticleGroup(World world, EntityPlayer owner, int maxTick, int spawnParticles, int spawnParticlesPerTick) {
+        super(world);
+        this.ticksInAir = 0;
+        this.shooter = owner;
+        setSize(0.39F, 0.39F);
+
+        setPosition(owner.posX, owner.posY + (double)shooter.getEyeHeight() - 0.1, owner.posZ);
+        this.maxExistTicks = maxTick;
+        this.spawnParticles = spawnParticles;
+        this.spawnParticlesPerTick = spawnParticlesPerTick;
+    }
+
+    public EntityParticleGroup(World world, Vec3d postion, int maxTick, int spawnParticles, int spawnParticlesPerTick) {
+        super(world);
+        this.ticksInAir = 0;
+        setSize(0.39F, 0.39F);
+        setPosition(postion.x, postion.y, postion.z);
+        this.maxExistTicks = maxTick;
+        this.spawnParticles = spawnParticles;
+        this.spawnParticlesPerTick = spawnParticlesPerTick;
+    }
+
+    @Override
+    public void onUpdate() 
+    {
+        super.onUpdate();
         if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F)
         {
             float f = MathHelper.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
@@ -82,7 +83,10 @@ public class EntityParticleGroup extends Entity {
         IBlockState iblockstate = this.world.getBlockState(blockpos);
         Block block = iblockstate.getBlock();
         TileEntity te = world.getTileEntity(blockpos);
-        if (iblockstate.getMaterial() != Material.AIR && !(te instanceof TileEntityWirelessPowerTransmissionNode))
+        
+        // ========== 移除对 TileEntityWirelessPowerTransmissionNode 的引用 ==========
+        // if (iblockstate.getMaterial() != Material.AIR && !(te instanceof TileEntityWirelessPowerTransmissionNode))
+        if (iblockstate.getMaterial() != Material.AIR)
         {
             AxisAlignedBB axisalignedbb = iblockstate.getCollisionBoundingBox(this.world, blockpos);
 
@@ -94,11 +98,11 @@ public class EntityParticleGroup extends Entity {
         }
 
         ++this.ticksInAir;
- 
+
         if(this.ticksInAir > maxExistTicks)
         {
-        	setDead();
-        	return;
+            setDead();
+            return;
         }
 
         this.posX += this.motionX;
@@ -106,34 +110,30 @@ public class EntityParticleGroup extends Entity {
         this.posZ += this.motionZ;
 
         this.setPosition(this.posX, this.posY, this.posZ);
+    }
 
-        //this.doBlockCollisions();
-	}
-	
-	public void shoot(float yaw, float pitch, float velocity)
-	{
+    public void shoot(float yaw, float pitch, float velocity)
+    {
         float f = -MathHelper.sin(yaw * 0.017453292F) * MathHelper.cos(pitch * 0.017453292F);
         float f1 = -MathHelper.sin(pitch * 0.017453292F);
         float f2 = MathHelper.cos(yaw * 0.017453292F) * MathHelper.cos(pitch * 0.017453292F);
         this.shoot((double)f, (double)f1, (double)f2, velocity);
-        
+
         this.motionX += shooter.motionX;
         this.motionY += shooter.motionY;
         this.motionZ += shooter.motionZ;
         this.velocity = velocity;
+    }
 
-	}
-	
-	public void shoot(Vec3d pos,Vec3d target)
-	{
-		double d1 = (target.x - pos.x)/8f ;
-		double d2 = (target.y - pos.y)/8f ;
-		double d3 = (target.z - pos.z) /8f;
-		double d4 = Math.sqrt(d1 * d1 + d2 * d2 + d3 * d3);
-		shoot(d1, d2 + d4, d3, 1.0f);
-		
-	}
-	
+    public void shoot(Vec3d pos, Vec3d target)
+    {
+        double d1 = (target.x - pos.x) / 8f;
+        double d2 = (target.y - pos.y) / 8f;
+        double d3 = (target.z - pos.z) / 8f;
+        double d4 = Math.sqrt(d1 * d1 + d2 * d2 + d3 * d3);
+        shoot(d1, d2 + d4, d3, 1.0f);
+    }
+
     public void shoot(double x, double y, double z, float velocity)
     {
         float f = MathHelper.sqrt(x * x + y * y + z * z);
@@ -155,39 +155,37 @@ public class EntityParticleGroup extends Entity {
         this.prevRotationYaw = this.rotationYaw;
         this.prevRotationPitch = this.rotationPitch;
     }
-  
-    
+
     public int getParticleSpawnCount()
     {
-    	return spawnParticles;
+        return spawnParticles;
     }
-    
+
     public int getParticleSpawnPerTick()
     {
-    	return spawnParticlesPerTick;
+        return spawnParticlesPerTick;
     }
-   
-	@Override
-	protected void entityInit(){}
 
-	@Override
-	protected void readEntityFromNBT(NBTTagCompound compound)
-	{
-		this.ticksInAir =  compound.getInteger("ticksInAir");
-		this.spawnParticles = compound.getInteger("spawnParticles");
-		this.velocity = compound.getFloat("velocity");
-		this.maxExistTicks = compound.getInteger("maxExistTicks");
-		this.spawnParticlesPerTick = compound.getInteger("spawnParticlesPerTick");
-	}
+    @Override
+    protected void entityInit(){}
 
-	@Override
-	protected void writeEntityToNBT(NBTTagCompound compound) 
-	{
+    @Override
+    protected void readEntityFromNBT(NBTTagCompound compound)
+    {
+        this.ticksInAir = compound.getInteger("ticksInAir");
+        this.spawnParticles = compound.getInteger("spawnParticles");
+        this.velocity = compound.getFloat("velocity");
+        this.maxExistTicks = compound.getInteger("maxExistTicks");
+        this.spawnParticlesPerTick = compound.getInteger("spawnParticlesPerTick");
+    }
+
+    @Override
+    protected void writeEntityToNBT(NBTTagCompound compound) 
+    {
         compound.setInteger("ticksInAir", this.ticksInAir);
         compound.setInteger("spawnParticles", this.spawnParticles);
         compound.setInteger("spawnParticlesPerTick", this.spawnParticlesPerTick);
         compound.setFloat("velocity", this.velocity);
         compound.setInteger("maxExistTicks", this.maxExistTicks);
-	}
+    }
 }
-

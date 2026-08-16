@@ -383,7 +383,7 @@ public class BlockManager {
 						"PGP",
 						'P', ItemCraftingManager.super_iridium_compress_plate,
 						'G', photon_resonance_solar_generator,
-						'B', getAllTypeStack(ItemManager.chargingSuperLapotronCrystal)
+						'B', getAllTypeStack(ItemManager.superLapotronCrystal)
 				});
 		
 		

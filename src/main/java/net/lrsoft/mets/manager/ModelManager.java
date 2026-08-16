@@ -82,8 +82,10 @@ public class ModelManager {
 		ModelLoader.setCustomModelResourceLocation(ItemManager.geomagneticDetector, 0,
 				new ModelResourceLocation(ItemManager.geomagneticDetector.getRegistryName(), "inventory"));
 		
-		ModelLoader.setCustomModelResourceLocation(ItemManager.nanoBow, 0,
-				new ModelResourceLocation(ItemManager.nanoBow.getRegistryName(), "inventory"));
+		// 移除 NanoBow 模型加载
+		// ModelLoader.setCustomModelResourceLocation(ItemManager.nanoBow, 0,
+		// 		new ModelResourceLocation(ItemManager.nanoBow.getRegistryName(), "inventory"));
+		
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricSubmachineGun, 0,
 				new ModelResourceLocation(ItemManager.electricSubmachineGun.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.advancedElectricSubmachineGun, 0,
@@ -91,11 +93,11 @@ public class ModelManager {
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricRocketLauncher, 0,
 				new ModelResourceLocation(ItemManager.electricRocketLauncher.getRegistryName(), "inventory"));
 		
-		// 移除 ElectricPlasmaGun 模型加载
+		// 移除 ElectricPlasmaGun 模型加载（已注释）
 		// ModelLoader.setCustomModelResourceLocation(ItemManager.electricPlasmaGun, 0,
 		// 		new ModelResourceLocation(ItemManager.electricPlasmaGun.getRegistryName(), "inventory"));
 		
-		// 移除 TachyonDisruptor 模型加载
+		// 移除 TachyonDisruptor 模型加载（已注释）
 		// ModelLoader.setCustomModelResourceLocation(ItemManager.tachyonDisruptor, 0,
 		// 		new ModelResourceLocation(ItemManager.tachyonDisruptor.getRegistryName(), "inventory"));
 		
@@ -175,7 +177,7 @@ public class ModelManager {
 			}
 		});
 		
-		// 移除 TachyonBullet 渲染注册
+		// 移除 TachyonBullet 渲染注册（已注释）
 		// RenderingRegistry.registerEntityRenderingHandler(EntityTachyonBullet.class, new IRenderFactory<EntityTachyonBullet>() {
 		// 	public Render<EntityTachyonBullet> createRenderFor(RenderManager manager) {
 		// 		return (Render<EntityTachyonBullet>) new TachyonRenderer(manager,

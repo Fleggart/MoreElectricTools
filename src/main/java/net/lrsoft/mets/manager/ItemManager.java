@@ -3,12 +3,7 @@ package net.lrsoft.mets.manager;
 import baubles.common.Baubles;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
-import ic2.core.item.armor.jetpack.JetpackAttachmentRecipe;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.armor.AdvancedJetPack;
-import net.lrsoft.mets.armor.AdvancedQuantumSuit;
-import net.lrsoft.mets.armor.DivingMask;
-import net.lrsoft.mets.armor.HeavyQuantumSuit;
 import net.lrsoft.mets.crop.CropManager;
 import net.lrsoft.mets.item.ElectricFirstAidLifeSupport;
 import net.lrsoft.mets.item.ElectricFishingRod;
@@ -84,11 +79,6 @@ public class ItemManager {
 	public static ElectricPlasmaGun electricPlasmaGun;
 	public static TachyonDisruptor tachyonDisruptor;
 	
-	public static DivingMask divingMask;
-	public static AdvancedQuantumSuit advancedQuantumChest;
-	public static AdvancedJetPack advancedJetPack;
-	public static HeavyQuantumSuit heavyQuantumChest;
-	
 	public static TitaniumIronAlloyRotor titaniumIronAlloyRotor;
 	public static SuperIridiumRotor superIridiumRotor;
 	
@@ -119,11 +109,6 @@ public class ItemManager {
 		electricRocketLauncher = new ElectricRocketLauncher();
 		electricPlasmaGun = new ElectricPlasmaGun();
 		tachyonDisruptor = new TachyonDisruptor();
-		
-		divingMask = new DivingMask();	
-		advancedQuantumChest = new AdvancedQuantumSuit("advanced_quantum_chest", EntityEquipmentSlot.CHEST);
-		advancedJetPack = new AdvancedJetPack();
-		heavyQuantumChest = new HeavyQuantumSuit("heavy_quantum_chest");
 		
 		titaniumIronAlloyRotor = new TitaniumIronAlloyRotor();
 		superIridiumRotor = new SuperIridiumRotor();
@@ -156,11 +141,6 @@ public class ItemManager {
 		event.getRegistry().register(electricWirlessManager);
 		event.getRegistry().register(tachyonDisruptor);
 		
-		event.getRegistry().register(divingMask);
-		event.getRegistry().register(advancedQuantumChest);
-		event.getRegistry().register(advancedJetPack);
-		event.getRegistry().register(heavyQuantumChest);
-		
 		event.getRegistry().register(titaniumIronAlloyRotor);
 		event.getRegistry().register(superIridiumRotor);
 		
@@ -186,7 +166,7 @@ public class ItemManager {
 			BladeManager.onBladeInit();
 		}
 	}
-	// new ItemStack(IC2Items.getItem("lapotron_crystal").getItem(), 1, OreDictionary.WILDCARD_VALUE),//IC2Items.getItem("energy_crystal"),
+	
 	private static void onRecipeInit() 
 	{
 		Recipes.advRecipes.addRecipe(new ItemStack(superLapotronCrystal), 
@@ -195,7 +175,7 @@ public class ItemManager {
 						"SDS",
 						"SCS",
 						'S', ItemCraftingManager.niobium_titanium_plate,
-						'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+						'C', Recipes.inputFactory.forOreDict("circuitElite"),
 						'D', getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
 				});
 		
@@ -250,7 +230,7 @@ public class ItemManager {
 						"SLS",
 						'C', IC2Items.getItem("cable", "type:tin,insulation:1"),
 						'S', IC2Items.getItem("casing", "lead"),
-						'L', Recipes.inputFactory.forOreDict("dustThorium")//ItemCraftingManager.thorium_dust
+						'L', Recipes.inputFactory.forOreDict("dustThorium")
 				});
 		
 		if(ConfigManager.EnableElectricNutritionSupplyCost)
@@ -264,7 +244,7 @@ public class ItemManager {
 							'S', IC2Items.getItem("casing", "gold"),
 							'C', IC2Items.getItem("crafting", "circuit"),
 							'H', IC2Items.getItem("heat_exchanger"),
-							'B', getAllTypeStack(lithiumBattery)//IC2Items.getItem("re_battery")
+							'B', getAllTypeStack(lithiumBattery)
 					});			
 		}
 
@@ -285,7 +265,7 @@ public class ItemManager {
 						"CBA",
 						"CMS",
 						'C', IC2Items.getItem("crafting", "carbon_plate"),
-						'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),//IC2Items.getItem("energy_crystal"),
+						'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
 						'M', IC2Items.getItem("crafting", "electric_motor"),
 						'S', Items.LEAD,
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
@@ -315,25 +295,12 @@ public class ItemManager {
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
 				});
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(divingMask), 
-				new Object[] {
-						"EBE",
-						"FGF",
-						"SCS",
-						'E', IC2Items.getItem("component_heat_exchanger"),
-						'B', getAllTypeStack(lithiumBattery),
-						'G', IC2Items.getItem("glass", "reinforced"),
-						'F', IC2Items.getItem("fluid_cell"),
-						'C', IC2Items.getItem("crafting", "advanced_circuit"),
-						'S', IC2Items.getItem("crafting", "rubber")
-				});
-		
 		Recipes.advRecipes.addRecipe(new ItemStack(titaniumIronAlloyRotor), 
 				new Object[] {
 						" B ",
 						"BHB",
 						" B ",
-						'H', Recipes.inputFactory.forOreDict("shaftTitanium"),//ItemCraftingManager.titanium_shaft,
+						'H', Recipes.inputFactory.forOreDict("shaftTitanium"),
 						'B', getAllTypeStack(ItemCraftingManager.titanium_iron_rotor_blade)
 				});
 		
@@ -342,7 +309,7 @@ public class ItemManager {
 						" B ",
 						"BHB",
 						" B ",
-						'H', Recipes.inputFactory.forOreDict("shaftTitanium"),//ItemCraftingManager.titanium_shaft,
+						'H', Recipes.inputFactory.forOreDict("shaftTitanium"),
 						'B', getAllTypeStack(ItemCraftingManager.super_iridium_blade)
 				});
 		
@@ -356,54 +323,9 @@ public class ItemManager {
 							'M', getAllTypeStack(electricForceFieldGenerator),
 							'B', getAllTypeStack(IC2Items.getItem("lapotron_crystal")),
 							'I', IC2Items.getItem("crafting", "iridium"),
-							'T', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+							'T', Recipes.inputFactory.forOreDict("circuitElite")
 					});
 		}
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(advancedQuantumChest), new Object[] {
-				"SBS",
-				"CAC",
-				"SRS",
-				'A', getAllTypeStack(IC2Items.getItem("quantum_chestplate")),
-				'B', getAllTypeStack(superLapotronCrystal),
-				'R', getAllTypeStack(electricFirstAidLifeSupport),
-				'S', ItemCraftingManager.super_iridium_compress_plate,
-				'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
-		});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(advancedQuantumChest), new Object[] {
-				"SBS",
-				"RCD",
-				"SAS",
-				'A', getAllTypeStack(heavyQuantumChest),
-				'B', getAllTypeStack(superLapotronCrystal),
-				'R', getAllTypeStack(electricFirstAidLifeSupport),
-				'S', ItemCraftingManager.super_iridium_compress_plate,
-				'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
-				'D', getAllTypeStack(IC2Items.getItem("jetpack_electric"))
-		});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(heavyQuantumChest), new Object[] {
-				"SAS",
-				"IBI",
-				"ICI",
-				'S', IC2Items.getItem("crafting", "alloy"),
-				'A', getAllTypeStack(IC2Items.getItem("nano_chestplate")),
-				'I', IC2Items.getItem("crafting", "iridium"),
-				'B', getAllTypeStack(IC2Items.getItem("lapotron_crystal")),
-				'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
-		});
-
-		Recipes.advRecipes.addRecipe(new ItemStack(advancedJetPack), new Object[]
-				{
-				"SBS",
-				"SJS",
-				"P P",
-				'S', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
-				'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
-				'J', getAllTypeStack(IC2Items.getItem("jetpack_electric")),
-				'P', IC2Items.getItem("upgrade", "fluid_ejector")
-				});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricSubmachineGun), new Object[]
 				{
@@ -427,7 +349,7 @@ public class ItemManager {
 				'B', getAllTypeStack(IC2Items.getItem("lapotron_crystal")),
 				'L', ItemCraftingManager.diamond_lens,
 				'J', IC2Items.getItem("iridium_reflector"),
-				'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+				'C', Recipes.inputFactory.forOreDict("circuitElite"),
 				'D', getAllTypeStack(electricSubmachineGun)
 				});
 		
@@ -440,15 +362,15 @@ public class ItemManager {
 				'B', getAllTypeStack(superLapotronCrystal),
 				'L', getAllTypeStack(advancedIridiumSword),
 				'J', getAllTypeStack(advancedElectricSubmachineGun),
-				'C', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+				'C', Recipes.inputFactory.forOreDict("circuitElite")
 				});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricRocketLauncher), new Object[]
 				{
 				"SSB",
-				"XLC",//XLC
+				"XLC",
 				"SFD",
-				'S', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+				'S', Recipes.inputFactory.forOreDict("plateTitanium"),
 				'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
 				'X', IC2Items.getItem("crafting", "coil"),
 				'L', IC2Items.getItem("upgrade", "ejector"),
@@ -460,7 +382,7 @@ public class ItemManager {
 		Recipes.advRecipes.addRecipe(new ItemStack(chargingSuperLapotronCrystal), new Object[]
 				{
 				"EBS",
-				"BOB",//XLC
+				"BOB",
 				"SBE",
 				'B', getAllTypeStack(ItemManager.superLapotronCrystal),
 				'E', ReactorItemManager.advHeatVent,
@@ -473,7 +395,7 @@ public class ItemManager {
 				"SCS",
 				"MBM",
 				"SCS",
-				'S', Recipes.inputFactory.forOreDict("casingTitanium"),//ItemCraftingManager.titanium_casing,
+				'S', Recipes.inputFactory.forOreDict("casingTitanium"),
 				'B', getAllTypeStack(IC2Items.getItem("energy_crystal")),
 				'M', getAllTypeStack(electricNutritionSupply),
 				'C', IC2Items.getItem("crafting", "advanced_circuit")
@@ -496,7 +418,7 @@ public class ItemManager {
 				   {"SCS",
 					"CTC",
 					"SBS",
-					'S', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+					'S', Recipes.inputFactory.forOreDict("plateTitanium"),
 					'B', getAllTypeStack(lithiumBattery),
 					'T', IC2Items.getItem("frequency_transmitter"),
 					'C', IC2Items.getItem("crafting", "advanced_circuit"),
@@ -506,7 +428,7 @@ public class ItemManager {
 				   {"SCS",
 					"CTC",
 					"SBS",
-					'S', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+					'S', Recipes.inputFactory.forOreDict("plateTitanium"),
 					'B', getAllTypeStack(lithiumBattery),
 					'T', IC2Items.getItem("te", "tesla_coil"),
 					'C', IC2Items.getItem("crafting", "advanced_circuit"),
@@ -522,7 +444,7 @@ public class ItemManager {
 					'O', IC2Items.getItem("crafting", "coil"),
 					'J', IC2Items.getItem("iridium_reflector"),
 					'T', IC2Items.getItem("upgrade", "ejector"),
-					'C', Recipes.inputFactory.forOreDict("circuitElite"),//ItemCraftingManager.super_circuit,
+					'C', Recipes.inputFactory.forOreDict("circuitElite"),
 					'D', getAllTypeStack(electricSubmachineGun)
 					});
 		
@@ -535,15 +457,11 @@ public class ItemManager {
 					'B', getAllTypeStack(superLapotronCrystal),
 					'O', ItemCraftingManager.neutron_plate,
 					'T', ItemCraftingManager.field_generator,
-					'C', Recipes.inputFactory.forOreDict("circuitUltimate"),//ItemCraftingManager.living_circuit,
+					'C', Recipes.inputFactory.forOreDict("circuitUltimate"),
 					'D', getAllTypeStack(tacticalLaserSubmachineGun)
 					});
 		
-		JetpackAttachmentRecipe.blacklistedItems.add(advancedQuantumChest);// N O P E
-		JetpackAttachmentRecipe.blacklistedItems.add(advancedJetPack);
-		
 		//Other
-		//Recipes.semiFluidGenerator.addFluid("ic2creosote", 10L, 8L);
 		try 
 		{
 			SpecialRecipesHelper.onInitLiquidRecipe();

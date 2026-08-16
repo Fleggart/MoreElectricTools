@@ -9,7 +9,6 @@ import net.lrsoft.mets.blade.RenderDriveEx;
 import net.lrsoft.mets.blade.RenderSlashDimensionEx;
 import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;
 import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;
-import net.lrsoft.mets.crop.CropManager;
 import net.lrsoft.mets.entity.EntityGunBullet;
 import net.lrsoft.mets.entity.EntityHyperGunBullet;
 import net.lrsoft.mets.entity.EntityPlasmaBullet;
@@ -117,7 +116,6 @@ public class ModelManager {
 		
 		ItemCraftingManager.onCraftingItemModelInit();
 		ReactorItemManager.onItemModelInit();
-		CropManager.onModelInit();
 
 		if (Loader.isModLoaded(Baubles.MODID))
 		{

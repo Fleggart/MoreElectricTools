@@ -3,7 +3,6 @@ package net.lrsoft.mets.manager;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.item.ElectricWirlessManager;
 import net.lrsoft.mets.item.battery.AdvancedLithiumBattery;
 import net.lrsoft.mets.item.battery.ChargingSuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.LithiumBattery;
@@ -30,8 +29,6 @@ public class ItemManager {
     public static LithiumBattery lithiumBattery;
     public static ThoriumBattery thoriumBattery;
     
-    public static ElectricWirlessManager electricWirlessManager;
-    
     
     static {
         superLapotronCrystal = new SuperLapotronCrystal();
@@ -40,8 +37,6 @@ public class ItemManager {
         advancedLithiumBattery = new AdvancedLithiumBattery();
         lithiumBattery = new LithiumBattery();
         thoriumBattery = new ThoriumBattery();
-        
-        electricWirlessManager = new ElectricWirlessManager();
         
     }
     
@@ -52,8 +47,6 @@ public class ItemManager {
         event.getRegistry().register(advancedLithiumBattery);
         event.getRegistry().register(lithiumBattery);
         event.getRegistry().register(thoriumBattery);
-        
-        event.getRegistry().register(electricWirlessManager);
         
         OreDictionary.registerOre("superLapotronCrystal", superLapotronCrystal);
         OreDictionary.registerOre("advancedLithiumBattery", advancedLithiumBattery);
@@ -119,16 +112,6 @@ public class ItemManager {
                 'E', IC2Items.getItem("crafting", "advanced_circuit"),
                 'S', IC2Items.getItem("advanced_heat_exchanger"),
                 'O', getAllTypeStack(IC2Items.getItem("charging_lapotron_crystal"))
-        });
-        
-        Recipes.advRecipes.addRecipe(new ItemStack(electricWirlessManager), new Object[] {
-                "SCS",
-                "CTC",
-                "SBS",
-                'S', Recipes.inputFactory.forOreDict("plateTitanium"),
-                'B', getAllTypeStack(lithiumBattery),
-                'T', IC2Items.getItem("frequency_transmitter"),
-                'C', IC2Items.getItem("crafting", "advanced_circuit"),
         });
         
         // Other

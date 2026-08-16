@@ -9,8 +9,6 @@ public class ConfigManager {
 	 public static boolean WeaponDamagesTerrain = true;
 	 @Config.RequiresMcRestart
 	 public static boolean EnableOreGenerate = true;
-	 //@Config.RequiresMcRestart
-	 //public static boolean EnableMoreKineticGenerator = true;
 	 @Config.RequiresMcRestart
 	 public static boolean EnableMoreStirlingGenerator = false;
 	 @Config.RequiresMcRestart

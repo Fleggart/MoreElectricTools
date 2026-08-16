@@ -4,7 +4,6 @@ import baubles.common.Baubles;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.crop.CropManager;
 import net.lrsoft.mets.item.ElectricFirstAidLifeSupport;
 import net.lrsoft.mets.item.ElectricFishingRod;
 import net.lrsoft.mets.item.ElectricForceFieldGenerator;
@@ -150,7 +149,6 @@ public class ItemManager {
 		
 		ItemCraftingManager.onCraftingItemInit(event);
 		ReactorItemManager.onItemInit(event);
-		CropManager.onItemInit(event);
 		
 		onRecipeInit();
 		ItemCraftingManager.onCraftingItemRecipeInit();

@@ -1,6 +1,5 @@
 package net.lrsoft.mets.manager;
 
-import baubles.common.Baubles;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
@@ -16,7 +15,6 @@ import net.lrsoft.mets.item.battery.ChargingSuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.LithiumBattery;
 import net.lrsoft.mets.item.battery.SuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.ThoriumBattery;
-import net.lrsoft.mets.item.bauble.ItemBaublesManager;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
@@ -139,11 +137,6 @@ public class ItemManager {
 		
 		onRecipeInit();
 		ItemCraftingManager.onCraftingItemRecipeInit();
-		
-		if (Loader.isModLoaded(Baubles.MODID)) 
-		{
-			ItemBaublesManager.onBaublesInit(event);
-		}
 		
 		if (Loader.isModLoaded("flammpfeil.slashblade")) 
 		{

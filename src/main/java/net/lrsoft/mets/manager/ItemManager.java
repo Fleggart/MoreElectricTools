@@ -4,7 +4,6 @@ import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
 import net.lrsoft.mets.item.ElectricWirlessManager;
-import net.lrsoft.mets.item.GeomagneticDetector;
 import net.lrsoft.mets.item.battery.AdvancedLithiumBattery;
 import net.lrsoft.mets.item.battery.ChargingSuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.LithiumBattery;

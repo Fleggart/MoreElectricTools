@@ -156,10 +156,10 @@ public class BlockManager {
 							"SSS",
 							"GMX",
 							"SSS",
-							'S', Recipes.inputFactory.forOreDict("plateTitanium"),//ItemCraftingManager.titanium_plate,
+							'S', Recipes.inputFactory.forOreDict("plateTitanium"),
 							'G', IC2Items.getItem("te","kinetic_generator"),
-							'M', ItemManager.titaniumIronAlloyRotor,
-							'X', Recipes.inputFactory.forOreDict("circuitElite")//ItemCraftingManager.super_circuit
+							'M', IC2Items.getItem("crafting", "electric_motor"),
+							'X', Recipes.inputFactory.forOreDict("circuitElite")
 					});
 			
 			ItemStack superKineticGenerator = teBlock.getItemStack(MetsBlockWithTileEntity.super_kinetic_generator);
@@ -170,7 +170,7 @@ public class BlockManager {
 							"SES",
 							'S', IC2Items.getItem("crafting", "iridium"),
 							'G', advancedKineticGenerator,
-							'M', ItemManager.superIridiumRotor,
+							'M', IC2Items.getItem("crafting", "electric_motor"),
 							'E', ReactorItemManager.advOCHeatVent
 					});			
 		//}

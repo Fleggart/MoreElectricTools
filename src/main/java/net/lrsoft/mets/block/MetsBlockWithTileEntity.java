@@ -53,7 +53,6 @@ public enum MetsBlockWithTileEntity implements ITeBlock {
     experience_generator((Class)TileEntityExperienceGenerator.class, 16, true, Util.allFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
     advanced_solar_generator((Class)TileEntityAdvancedSolarGenerator.class, 17, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Generator, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
     photon_resonance_solar_generator((Class)TileEntityVibrateSolarGenerator.class, 18, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Generator, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    wireless_power_transmission_node((Class)TileEntityWirelessPowerTransmissionNode.class, 19, true, Util.noFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
     ultimate_photon_resonance_solar_generator((Class)TileEntityUltimateSolarGenerator.class, 20, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Generator, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
     geomagnetic_generator((Class)TileEntityGeomagneticGenerator.class, 21, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Generator, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
     
@@ -84,6 +83,11 @@ public enum MetsBlockWithTileEntity implements ITeBlock {
     fabricator_scrap((Class)TileEntityFabricatorScrap.class, 40, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
     
     dimension_oil_rig_core((Class)TileEntityDimensionOilRigCore.class, 41, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false);
+    
+    // ========== 已移除 ==========
+    // laser_tower(...),           // 已移除
+    // advanced_laser_tower(...),  // 已移除
+    // wireless_power_transmission_node(...)  // 已移除
 
     public static final ResourceLocation loc = new ResourceLocation(MoreElectricTools.MODID, "te");
     private Class<? extends TileEntityBlock> teClass;
@@ -215,4 +219,4 @@ public enum MetsBlockWithTileEntity implements ITeBlock {
         return (this.teClass != null && this.itemMeta != -1);
     }
     
-}
+ }

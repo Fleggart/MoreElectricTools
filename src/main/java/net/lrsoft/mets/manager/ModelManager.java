@@ -17,7 +17,6 @@ import net.lrsoft.mets.item.blade.BladeModelManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.renderer.BulletRenderer;
 import net.lrsoft.mets.renderer.LighterRenderer;
-// import net.lrsoft.mets.renderer.NanoShieldRenderer;  // 删除这行
 import net.lrsoft.mets.renderer.PlasmaBulletRenderer;
 import net.lrsoft.mets.renderer.RocketRender;
 import net.lrsoft.mets.renderer.TransmissionNodeRenderer;
@@ -65,10 +64,6 @@ public class ModelManager {
 				new ModelResourceLocation(ItemManager.lithiumBattery.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.thoriumBattery, 0,
 				new ModelResourceLocation(ItemManager.thoriumBattery.getRegistryName(), "inventory"));
-		// ModelLoader.setCustomModelResourceLocation(ItemManager.electricFishingRod, 0,
-		//         new ModelResourceLocation(ItemManager.electricFishingRod.getRegistryName(), "inventory"));  // 删除这行
-		// ModelLoader.setCustomModelResourceLocation(ItemManager.electricShield, 0,
-		//         new ModelResourceLocation(ItemManager.electricShield.getRegistryName(), "inventory"));  // 删除这行
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricLighter, 0,
 				new ModelResourceLocation(ItemManager.electricLighter.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricWirlessManager, 0,
@@ -86,8 +81,6 @@ public class ModelManager {
 		
 		ModelLoader.setCustomModelResourceLocation(ItemManager.tacticalLaserSubmachineGun, 0,
 				new ModelResourceLocation(ItemManager.tacticalLaserSubmachineGun.getRegistryName(), "inventory"));
-		
-		// ItemManager.electricShield.setTileEntityItemStackRenderer(new NanoShieldRenderer());  // 删除这行
 		
 		ItemCraftingManager.onCraftingItemModelInit();
 

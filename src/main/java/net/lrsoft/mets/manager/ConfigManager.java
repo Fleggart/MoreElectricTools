@@ -34,10 +34,4 @@ public class ConfigManager {
     public static double AdvancedQuantumSuitDamageEnergyCost = 10000d;
     @Config.RequiresWorldRestart
     public static double AdvancedQuantumSuitCureCost = 30000d;
-    
-    @Config.RequiresWorldRestart
-    public static double LaserTowerCost = 250d;
-    
-    @Config.RequiresWorldRestart
-    public static double AdvancedLaserTowerCost = 2500d;
 }

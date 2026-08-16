@@ -3,7 +3,7 @@ package net.lrsoft.mets.manager;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.item.ElectricFishingRod;
+// import net.lrsoft.mets.item.ElectricFishingRod;  // 删除这行
 import net.lrsoft.mets.item.ElectricLighter;
 import net.lrsoft.mets.item.ElectricWirlessManager;
 import net.lrsoft.mets.item.GeomagneticDetector;
@@ -16,7 +16,7 @@ import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
-// import net.lrsoft.mets.item.weapon.ElectricShield;  // 删除这行
+import net.lrsoft.mets.item.weapon.ElectricShield;
 import net.lrsoft.mets.item.weapon.ElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.TacticalLaserSubmachineGun;
 import net.lrsoft.mets.util.SpecialRecipesHelper;
@@ -45,8 +45,8 @@ public class ItemManager {
 	public static LithiumBattery lithiumBattery;
 	public static ThoriumBattery thoriumBattery;
 	
-	public static ElectricFishingRod electricFishingRod;
-	// public static ElectricShield electricShield;  // 删除这行
+	// public static ElectricFishingRod electricFishingRod;  // 删除这行
+	public static ElectricShield electricShield;
 	public static ElectricLighter electricLighter;
 	
 	public static ElectricWirlessManager electricWirlessManager;
@@ -65,8 +65,8 @@ public class ItemManager {
 		lithiumBattery = new LithiumBattery();
 		thoriumBattery = new ThoriumBattery();
 		
-		electricFishingRod = new ElectricFishingRod();
-		// electricShield = new ElectricShield();  // 删除这行
+		// electricFishingRod = new ElectricFishingRod();  // 删除这行
+		electricShield = new ElectricShield();
 		electricWirlessManager = new ElectricWirlessManager();
 		electricLighter = new ElectricLighter();
 		geomagneticDetector = new GeomagneticDetector();
@@ -85,8 +85,8 @@ public class ItemManager {
 		event.getRegistry().register(advancedLithiumBattery);
 		event.getRegistry().register(lithiumBattery);
 		event.getRegistry().register(thoriumBattery);
-		event.getRegistry().register(electricFishingRod);
-		// event.getRegistry().register(electricShield);  // 删除这行
+		// event.getRegistry().register(electricFishingRod);  // 删除这行
+		event.getRegistry().register(electricShield);
 		event.getRegistry().register(electricSubmachineGun);
 		event.getRegistry().register(advancedElectricSubmachineGun);
 		event.getRegistry().register(tacticalLaserSubmachineGun);
@@ -154,17 +154,18 @@ public class ItemManager {
 						'L', Recipes.inputFactory.forOreDict("dustThorium")
 				});
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(electricFishingRod), 
-				new Object[] {
-						" SL",
-						"SDL",
-						" SL",
-						'S', IC2Items.getItem("casing", "iron"),
-						'L', Items.STRING,
-						'D', IC2Items.getItem("crafting", "small_power_unit")
-				});
+		// 删除 ElectricFishingRod 的配方
 		
-		// 删除 ElectricShield 的配方
+		Recipes.advRecipes.addRecipe(new ItemStack(electricShield), 
+				new Object[] {
+						"SAS",
+						"SBS",
+						"SDS",
+						'S', IC2Items.getItem("plate", "steel"),
+						'B', getAllTypeStack(lithiumBattery),
+						'D', IC2Items.getItem("crafting", "power_unit"),
+						'A', IC2Items.getItem("crafting", "advanced_circuit")
+				});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricSubmachineGun), new Object[]
 				{

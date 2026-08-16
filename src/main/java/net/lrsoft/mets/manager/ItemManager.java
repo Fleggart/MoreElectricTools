@@ -45,21 +45,12 @@ public class ItemManager {
 	public static LithiumBattery lithiumBattery;
 	public static ThoriumBattery thoriumBattery;
 	
-	// 移除 ElectricFirstAidLifeSupport
-	// public static ElectricFirstAidLifeSupport electricFirstAidLifeSupport;
-	// 移除 ElectricNutritionSupply
-	// public static ElectricNutritionSupply electricNutritionSupply;
 	public static ElectricFishingRod electricFishingRod;
 	public static ElectricShield electricShield;
-	// 移除 ElectricForceFieldGenerator
-	// public static ElectricForceFieldGenerator electricForceFieldGenerator;
 	public static ElectricLighter electricLighter;
 	
 	public static ElectricWirlessManager electricWirlessManager;
 	public static GeomagneticDetector geomagneticDetector;
-	
-	// 移除 NanoBow
-	// public static NanoBow nanoBow;
 	public static ElectricSubmachineGun electricSubmachineGun;
 	public static AdvancedElectricSubmachineGun advancedElectricSubmachineGun;
 	public static TacticalLaserSubmachineGun tacticalLaserSubmachineGun;
@@ -74,17 +65,9 @@ public class ItemManager {
 		lithiumBattery = new LithiumBattery();
 		thoriumBattery = new ThoriumBattery();
 		
-		// 移除 ElectricFirstAidLifeSupport 初始化
-		// electricFirstAidLifeSupport = new ElectricFirstAidLifeSupport();
-		// 移除 ElectricNutritionSupply 初始化
-		// electricNutritionSupply = new ElectricNutritionSupply();
 		electricFishingRod = new ElectricFishingRod();
 		electricShield = new ElectricShield();
-		// 移除 ElectricForceFieldGenerator 初始化
-		// electricForceFieldGenerator = new ElectricForceFieldGenerator();
 		electricWirlessManager = new ElectricWirlessManager();
-		// 移除 NanoBow 初始化
-		// nanoBow = new NanoBow();
 		electricLighter = new ElectricLighter();
 		geomagneticDetector = new GeomagneticDetector();
 		

@@ -67,13 +67,7 @@ public class ConfigManager {
 	 public static double TacticalLaserSubmachineGunCost = 10000d;
 	 
 	 @Config.RequiresWorldRestart
-	 public static double ElectricPlasmaGunCost = 5000d;
-	 
-	 @Config.RequiresWorldRestart
 	 public static double ForceFieldCost = 5000d;
-	 
-	 @Config.RequiresWorldRestart
-	 public static double TachyonDisruptorCost = 50000d;
 	 
 	 @Config.RequiresWorldRestart
 	 public static double LaserTowerCost = 250d;

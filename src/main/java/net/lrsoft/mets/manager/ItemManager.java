@@ -23,7 +23,6 @@ import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
 import net.lrsoft.mets.item.weapon.ElectricShield;
 import net.lrsoft.mets.item.weapon.ElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.NanoBow;
-import net.lrsoft.mets.item.weapon.PlasmaAirCannon;
 import net.lrsoft.mets.item.weapon.TachyonDisruptor;
 import net.lrsoft.mets.item.weapon.TacticalLaserSubmachineGun;
 import net.lrsoft.mets.util.SpecialRecipesHelper;
@@ -63,7 +62,6 @@ public class ItemManager {
 	public static GeomagneticDetector geomagneticDetector;
 	
 	public static NanoBow nanoBow;
-	public static PlasmaAirCannon plasmaAirCannon;
 	public static ElectricSubmachineGun electricSubmachineGun;
 	public static AdvancedElectricSubmachineGun advancedElectricSubmachineGun;
 	public static TacticalLaserSubmachineGun tacticalLaserSubmachineGun;
@@ -87,7 +85,6 @@ public class ItemManager {
 		electricForceFieldGenerator = new ElectricForceFieldGenerator();
 		electricWirlessManager = new ElectricWirlessManager();
 		nanoBow = new NanoBow();
-		plasmaAirCannon = new PlasmaAirCannon();	
 		electricLighter = new ElectricLighter();
 		geomagneticDetector = new GeomagneticDetector();
 		
@@ -112,7 +109,6 @@ public class ItemManager {
 		event.getRegistry().register(electricFishingRod);
 		event.getRegistry().register(electricShield);
 		event.getRegistry().register(nanoBow);
-		event.getRegistry().register(plasmaAirCannon);
 		event.getRegistry().register(electricSubmachineGun);
 		event.getRegistry().register(advancedElectricSubmachineGun);
 		event.getRegistry().register(tacticalLaserSubmachineGun);
@@ -221,18 +217,18 @@ public class ItemManager {
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
 				});		
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(plasmaAirCannon), 
-				new Object[] {
-						"CCB",
-						"LPA",
-						"LLB",
-						'C', IC2Items.getItem("crafting", "coil"),
-						'B', getAllTypeStack(lithiumBattery),
-						'L', IC2Items.getItem("crafting", "alloy"),
-						'P', IC2Items.getItem("fluid_cell"),
-						'A', IC2Items.getItem("crafting", "advanced_circuit")
-				});
-		
+		// 移除 PlasmaAirCannon 合成配方
+		// Recipes.advRecipes.addRecipe(new ItemStack(plasmaAirCannon), 
+		// 		new Object[] {
+		// 				"CCB",
+		// 				"LPA",
+		// 				"LLB",
+		// 				'C', IC2Items.getItem("crafting", "coil"),
+		// 				'B', getAllTypeStack(lithiumBattery),
+		// 				'L', IC2Items.getItem("crafting", "alloy"),
+		// 				'P', IC2Items.getItem("fluid_cell"),
+		// 				'A', IC2Items.getItem("crafting", "advanced_circuit")
+		// 		});
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricShield), 
 				new Object[] {

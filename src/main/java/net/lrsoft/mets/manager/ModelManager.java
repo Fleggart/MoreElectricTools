@@ -86,8 +86,6 @@ public class ModelManager {
 		
 		ModelLoader.setCustomModelResourceLocation(ItemManager.nanoBow, 0,
 				new ModelResourceLocation(ItemManager.nanoBow.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemManager.plasmaAirCannon, 0,
-				new ModelResourceLocation(ItemManager.plasmaAirCannon.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.electricSubmachineGun, 0,
 				new ModelResourceLocation(ItemManager.electricSubmachineGun.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemManager.advancedElectricSubmachineGun, 0,

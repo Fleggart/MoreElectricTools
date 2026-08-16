@@ -131,16 +131,6 @@ public class ItemManager {
                 'C', IC2Items.getItem("crafting", "advanced_circuit"),
         });
         
-        Recipes.advRecipes.addRecipe(new ItemStack(geomagneticDetector), new Object[] {
-                "SCS",
-                "CTC",
-                "SBS",
-                'S', Recipes.inputFactory.forOreDict("plateTitanium"),
-                'B', getAllTypeStack(lithiumBattery),
-                'T', IC2Items.getItem("te", "tesla_coil"),
-                'C', IC2Items.getItem("crafting", "advanced_circuit"),
-        });
-        
         // Other
         try {
             SpecialRecipesHelper.onInitLiquidRecipe();

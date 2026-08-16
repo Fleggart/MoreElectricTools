@@ -24,8 +24,6 @@ public class EntityManager {
 		registerEntity(event, EntityHyperGunBullet.class, "HyperGunBullet", 250, 5);
 		registerEntity(event, EntityRocket.class, "RocketBullet", 200, 3);
 		registerEntity(event, EntityPlasmaBullet.class, "PlasmaBullet", 200, 5);
-		// 移除 TachyonBullet 实体注册
-		// registerEntity(event, EntityTachyonBullet.class, "TachyonBullet", 300, 5);
 		
 		if (Loader.isModLoaded("flammpfeil.slashblade")) 
 		{

@@ -22,7 +22,6 @@ import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
 import net.lrsoft.mets.item.weapon.ElectricShield;
 import net.lrsoft.mets.item.weapon.ElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.NanoBow;
-import net.lrsoft.mets.item.weapon.TachyonDisruptor;
 import net.lrsoft.mets.item.weapon.TacticalLaserSubmachineGun;
 import net.lrsoft.mets.util.SpecialRecipesHelper;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -65,7 +64,6 @@ public class ItemManager {
 	public static AdvancedElectricSubmachineGun advancedElectricSubmachineGun;
 	public static TacticalLaserSubmachineGun tacticalLaserSubmachineGun;
 	public static ElectricRocketLauncher electricRocketLauncher;
-	public static TachyonDisruptor tachyonDisruptor;
 	
 	static 
 	{
@@ -90,7 +88,6 @@ public class ItemManager {
 		advancedElectricSubmachineGun = new AdvancedElectricSubmachineGun();
 		tacticalLaserSubmachineGun = new TacticalLaserSubmachineGun();
 		electricRocketLauncher = new ElectricRocketLauncher();
-		tachyonDisruptor = new TachyonDisruptor();
 	}
 	
 	@SubscribeEvent
@@ -115,7 +112,6 @@ public class ItemManager {
 		event.getRegistry().register(geomagneticDetector);
 		
 		event.getRegistry().register(electricWirlessManager);
-		event.getRegistry().register(tachyonDisruptor);
 		
 		OreDictionary.registerOre("superLapotronCrystal", superLapotronCrystal);
 		OreDictionary.registerOre("advancedLithiumBattery", advancedLithiumBattery);
@@ -333,7 +329,7 @@ public class ItemManager {
 					'C', IC2Items.getItem("crafting", "advanced_circuit"),
 					});
 		
-		// 移除 ElectricPlasmaGun 合成配方
+		// 移除 ElectricPlasmaGun 合成配方（已注释）
 		// Recipes.advRecipes.addRecipe(new ItemStack(electricPlasmaGun), new Object[]
 		// 		{
 		// 			"TSB",
@@ -348,18 +344,19 @@ public class ItemManager {
 		// 			'D', getAllTypeStack(electricSubmachineGun)
 		// 			});
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(tachyonDisruptor), new Object[]
-				{
-					"OSB",
-					"TTC",
-					"OSD",
-					'S', ItemCraftingManager.nano_living_metal,
-					'B', getAllTypeStack(superLapotronCrystal),
-					'O', ItemCraftingManager.neutron_plate,
-					'T', ItemCraftingManager.field_generator,
-					'C', Recipes.inputFactory.forOreDict("circuitUltimate"),
-					'D', getAllTypeStack(tacticalLaserSubmachineGun)
-					});
+		// 移除 TachyonDisruptor 合成配方
+		// Recipes.advRecipes.addRecipe(new ItemStack(tachyonDisruptor), new Object[]
+		// 		{
+		// 			"OSB",
+		// 			"TTC",
+		// 			"OSD",
+		// 			'S', ItemCraftingManager.nano_living_metal,
+		// 			'B', getAllTypeStack(superLapotronCrystal),
+		// 			'O', ItemCraftingManager.neutron_plate,
+		// 			'T', ItemCraftingManager.field_generator,
+		// 			'C', Recipes.inputFactory.forOreDict("circuitUltimate"),
+		// 			'D', getAllTypeStack(tacticalLaserSubmachineGun)
+		// 			});
 		
 		//Other
 		try 

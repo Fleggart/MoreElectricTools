@@ -21,7 +21,6 @@ import net.lrsoft.mets.block.MetsBlockWithTileEntity;
 import net.lrsoft.mets.block.UniformResourceBlock;
 import net.lrsoft.mets.block.tileentity.IMets;
 import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;
-import net.lrsoft.mets.crop.CropManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.lrsoft.mets.item.reactor.ReactorItemManager;
 import net.minecraft.block.Block;
@@ -729,7 +728,6 @@ public class BlockManager {
 	    event.getRegistry().register(titaniumScaffold);
 	    GameRegistry.registerTileEntity(TileEntityLighterBlock.class,
 	    		new ResourceLocation(MoreElectricTools.MODID, "lighter_block"));
-	    CropManager.onBlockInit(event);
 	    FluidManager.onFluidBlockInit(event);
 	}
 	

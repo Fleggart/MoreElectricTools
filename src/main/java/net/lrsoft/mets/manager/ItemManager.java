@@ -21,7 +21,6 @@ import net.lrsoft.mets.item.weapon.AdvancedElectricSubmachineGun;
 import net.lrsoft.mets.item.weapon.ElectricRocketLauncher;
 import net.lrsoft.mets.item.weapon.ElectricShield;
 import net.lrsoft.mets.item.weapon.ElectricSubmachineGun;
-import net.lrsoft.mets.item.weapon.NanoBow;
 import net.lrsoft.mets.item.weapon.TacticalLaserSubmachineGun;
 import net.lrsoft.mets.util.SpecialRecipesHelper;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -59,7 +58,8 @@ public class ItemManager {
 	public static ElectricWirlessManager electricWirlessManager;
 	public static GeomagneticDetector geomagneticDetector;
 	
-	public static NanoBow nanoBow;
+	// 移除 NanoBow
+	// public static NanoBow nanoBow;
 	public static ElectricSubmachineGun electricSubmachineGun;
 	public static AdvancedElectricSubmachineGun advancedElectricSubmachineGun;
 	public static TacticalLaserSubmachineGun tacticalLaserSubmachineGun;
@@ -80,7 +80,8 @@ public class ItemManager {
 		electricShield = new ElectricShield();
 		electricForceFieldGenerator = new ElectricForceFieldGenerator();
 		electricWirlessManager = new ElectricWirlessManager();
-		nanoBow = new NanoBow();
+		// 移除 NanoBow 初始化
+		// nanoBow = new NanoBow();
 		electricLighter = new ElectricLighter();
 		geomagneticDetector = new GeomagneticDetector();
 		
@@ -102,7 +103,8 @@ public class ItemManager {
 		event.getRegistry().register(electricNutritionSupply);
 		event.getRegistry().register(electricFishingRod);
 		event.getRegistry().register(electricShield);
-		event.getRegistry().register(nanoBow);
+		// 移除 NanoBow 注册
+		// event.getRegistry().register(nanoBow);
 		event.getRegistry().register(electricSubmachineGun);
 		event.getRegistry().register(advancedElectricSubmachineGun);
 		event.getRegistry().register(tacticalLaserSubmachineGun);
@@ -197,6 +199,8 @@ public class ItemManager {
 						'D', IC2Items.getItem("crafting", "small_power_unit")
 				});
 		
+		// 移除 NanoBow 合成配方
+		/*
 		Recipes.advRecipes.addRecipe(new ItemStack(nanoBow), 
 				new Object[] {
 						"CMS",
@@ -207,7 +211,8 @@ public class ItemManager {
 						'M', IC2Items.getItem("crafting", "electric_motor"),
 						'S', Items.LEAD,
 						'A', IC2Items.getItem("crafting", "advanced_circuit")
-				});		
+				});
+		*/		
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(electricShield), 
 				new Object[] {
@@ -344,7 +349,7 @@ public class ItemManager {
 		// 			'D', getAllTypeStack(electricSubmachineGun)
 		// 			});
 		
-		// 移除 TachyonDisruptor 合成配方
+		// 移除 TachyonDisruptor 合成配方（已注释）
 		// Recipes.advRecipes.addRecipe(new ItemStack(tachyonDisruptor), new Object[]
 		// 		{
 		// 			"OSB",

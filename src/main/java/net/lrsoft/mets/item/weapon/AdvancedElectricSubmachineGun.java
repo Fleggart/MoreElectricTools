@@ -5,16 +5,13 @@ import net.lrsoft.mets.entity.EntityGunBullet;
 import net.lrsoft.mets.item.UniformElectricItem;
 import net.lrsoft.mets.manager.ConfigManager;
 import net.lrsoft.mets.manager.SoundManager;
-import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class AdvancedElectricSubmachineGun extends UniformElectricItem {
@@ -33,8 +30,7 @@ public class AdvancedElectricSubmachineGun extends UniformElectricItem {
 		if(currentTime - lastRightClick > 125)
 		{
 			lastRightClick = currentTime;
-			float ratio = getElectricItemAttenuationRatio(currentGun);
-			if(ElectricItem.manager.use(currentGun, ConfigManager.AdvancedElectricSubmachineGunCost * ratio, playerIn))
+			if(ElectricItem.manager.use(currentGun, ConfigManager.AdvancedElectricSubmachineGunCost, playerIn))
 			{
 				EntityGunBullet entity = new EntityGunBullet(worldIn, playerIn, 25f, 360);
 				entity.shoot(playerIn.rotationYaw, playerIn.rotationPitch, 3.0f);
@@ -56,8 +52,7 @@ public class AdvancedElectricSubmachineGun extends UniformElectricItem {
          {
 			EntityPlayer player = (EntityPlayer) attacker;
 			EntityLivingBase enemyEntity = (EntityLivingBase) targetEntity;
-			float ratio = getElectricItemAttenuationRatio(stack);
-			if (ElectricItem.manager.use(stack, ratio * ConfigManager.AdvancedElectricSubmachineGunCost / 5.0, player)) {
+			if (ElectricItem.manager.use(stack, ConfigManager.AdvancedElectricSubmachineGunCost / 5.0, player)) {
 				enemyEntity.knockBack(attacker, 0.75f, (double) MathHelper.sin(player.rotationYaw * 0.017453292F),
 						(double) (-MathHelper.cos(player.rotationYaw * 0.017453292F)));
 			}

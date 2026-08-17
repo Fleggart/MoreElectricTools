@@ -73,14 +73,12 @@ public class BladeTechRevTheme {
 
 		if (ConfigManager.EnableEUSlashBladeRecipe) {
 			Object[] recipetable = new Object[] {
-					"CAC",
+					"CYC",
 					"YBY",
-					"CLC",
-					Character.valueOf('A'), ItemCraftingManager.super_circuit,
+					"CYC",
 					Character.valueOf('B'), custombladeReqired,
 					Character.valueOf('C'), IC2Items.getItem("crafting", "iridium"),
-					Character.valueOf('Y'), ItemCraftingManager.niobium_titanium_plate,
-					Character.valueOf('L'), ItemManager.getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
+					Character.valueOf('Y'), ItemCraftingManager.niobium_titanium_plate
 			};
 
 			if (Loader.isModLoaded("lastsmith")) {

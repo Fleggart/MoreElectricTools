@@ -1,28 +1,19 @@
 package net.lrsoft.mets.manager;
 
 import ic2.api.recipe.Recipes;
-import ic2.core.block.BlockTileEntity;
-import ic2.core.block.TeBlockRegistry;
-import ic2.core.ref.TeBlock;
-import ic2.core.util.StackUtil;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.block.MetsBlockWithTileEntity;
 import net.lrsoft.mets.block.UniformResourceBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 @Mod.EventBusSubscriber(modid = MoreElectricTools.MODID)
@@ -55,28 +46,7 @@ public class BlockManager {
         };
     }
 
-    @SubscribeEvent
-    public static void onTeBlockInit(TeBlockFinalCallEvent event) {
-        TeBlockRegistry.addAll(MetsBlockWithTileEntity.class, MetsBlockWithTileEntity.loc);
-        TeBlockRegistry.addCreativeRegisterer((list, block, itemblock, tab) -> {
-            if (tab == CreativeTabs.SEARCH || tab == MoreElectricTools.CREATIVE_TAB) {
-                block.getAllTypes().forEach(type -> {
-                    if (type.hasItem()) {
-                        list.add(block.getItemStack(type));
-                        if (type.getDummyTe() instanceof IEnergyStorage) {
-                            ItemStack filled = block.getItemStack(type);
-                            StackUtil.getOrCreateNbtData(filled).setDouble("energy",
-                                    ((IEnergyStorage) type.getDummyTe()).getCapacity());
-                            list.add(filled);
-                        }
-                    }
-                });
-            }
-        }, MetsBlockWithTileEntity.loc);
-    }
-
     public static void onBlockRecipeInit() {
-        // Compressor recipe for titanium block
         Recipes.compressor.addRecipe(
                 Recipes.inputFactory.forOreDict("ingotTitanium", 9), null, false, new ItemStack(titaniumBlock));
     }
@@ -87,7 +57,6 @@ public class BlockManager {
         event.getRegistry().register(titaniumOre);
         event.getRegistry().register(titaniumBlock);
         event.getRegistry().register(titaniumScaffold);
-        // 所有机器方块已移除
     }
 
     @SubscribeEvent
@@ -96,7 +65,6 @@ public class BlockManager {
         event.getRegistry().register(new ItemBlock(titaniumOre).setRegistryName(titaniumOre.getRegistryName()));
         event.getRegistry().register(new ItemBlock(titaniumBlock).setRegistryName(titaniumBlock.getRegistryName()));
         event.getRegistry().register(new ItemBlock(titaniumScaffold).setRegistryName(titaniumScaffold.getRegistryName()));
-        // 所有机器ItemBlock已移除
     }
 
     private static ItemStack getAllTypeStack(ItemStack itemstack) {

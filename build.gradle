@@ -8,10 +8,6 @@ buildscript {
             name = "ForgeGradle"
             url = "https://files.minecraftforge.net/maven"
         }
-        maven {
-            name = "gradle-plugin"
-            url = "https://maven.aliyun.com/repository/gradle-plugin"
-        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'

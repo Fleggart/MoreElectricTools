@@ -1,104 +1,88 @@
 package net.lrsoft.mets.manager;
 
-import ic2.core.item.tool.RenderCrossed;
+import ic2.api.recipe.Recipes;
+import ic2.core.block.BlockTileEntity;
+import ic2.core.block.TeBlockRegistry;
+import ic2.core.ref.TeBlock;
+import ic2.core.util.StackUtil;
 import net.lrsoft.mets.MoreElectricTools;
-import net.lrsoft.mets.blade.EntityDriveEx;
-import net.lrsoft.mets.blade.EntitySlashDimensionEx;
-import net.lrsoft.mets.blade.RenderDriveEx;
-import net.lrsoft.mets.blade.RenderSlashDimensionEx;
-import net.lrsoft.mets.item.blade.BladeManager;
-import net.lrsoft.mets.item.blade.BladeModelManager;
-import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.renderer.particle.EntityParticleGroup;
-import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
-import net.lrsoft.mets.renderer.particle.InstantParticleRender;
-import net.lrsoft.mets.renderer.particle.ParticleRenderer;
+import net.lrsoft.mets.block.MetsBlockWithTileEntity;
+import net.lrsoft.mets.block.UniformResourceBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.ItemMeshDefinition;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMapperBase;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.Loader;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.oredict.OreDictionary;
 
-@Mod.EventBusSubscriber(value = Side.CLIENT, modid = MoreElectricTools.MODID)
-public class ModelManager {
-    @SubscribeEvent
-    public static void onItemModelInit(ModelRegistryEvent event) {
-        ModelLoader.setCustomModelResourceLocation(ItemManager.superLapotronCrystal, 0,
-                new ModelResourceLocation(ItemManager.superLapotronCrystal.getRegistryName(), "inventory"));
+@Mod.EventBusSubscriber(modid = MoreElectricTools.MODID)
+public class BlockManager {
+    public static Block niobiumOre;
+    public static Block titaniumOre;
+    public static Block titaniumBlock;
+    public static Block titaniumScaffold;
 
-        ModelLoader.setCustomModelResourceLocation(ItemManager.advancedLithiumBattery, 0,
-                new ModelResourceLocation(ItemManager.advancedLithiumBattery.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemManager.lithiumBattery, 0,
-                new ModelResourceLocation(ItemManager.lithiumBattery.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(ItemManager.thoriumBattery, 0,
-                new ModelResourceLocation(ItemManager.thoriumBattery.getRegistryName(), "inventory"));
-
-        ItemCraftingManager.onCraftingItemModelInit();
-
-        if (Loader.isModLoaded("flammpfeil.slashblade")) {
-            BladeModelManager.onModelInit();
-        }
-    }
-
-    @SubscribeEvent
-    public static void onBlockModelInit(ModelRegistryEvent event) {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.niobiumOre), 0, 
-                new ModelResourceLocation(BlockManager.niobiumOre.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumOre), 0, 
-                new ModelResourceLocation(BlockManager.titaniumOre.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumBlock), 0, 
-                new ModelResourceLocation(BlockManager.titaniumBlock.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumScaffold), 0, 
-                new ModelResourceLocation(BlockManager.titaniumScaffold.getRegistryName(), "normal"));
-        // 所有机器模型已移除
-    }
-
-    @SubscribeEvent
-    public static void onFluidModelInit(ModelRegistryEvent event) {
-        // 所有流体模型已移除
-    }
-
-    @SubscribeEvent
-    public static void onEntityModelInit(ModelRegistryEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(EntityParticleGroup.class, new IRenderFactory<EntityParticleGroup>() {
-            public Render<EntityParticleGroup> createRenderFor(RenderManager manager) {
-                return (Render<EntityParticleGroup>) new ParticleRenderer(manager);
+    static {
+        niobiumOre = new UniformResourceBlock("niobium_ore", 2.5f, 2);
+        titaniumOre = new UniformResourceBlock("titanium_ore", 2.5f, 2);
+        titaniumBlock = new UniformResourceBlock("titanium_block", Material.IRON, 5.0f, 1);
+        
+        titaniumScaffold = new UniformResourceBlock("titanium_scaffold", Material.GLASS, SoundType.METAL, 5.0f, 1) {
+            @Override
+            public boolean isOpaqueCube(IBlockState state) {
+                return false;
             }
-        });
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityParticleSpray.class, new IRenderFactory<EntityParticleSpray>() {
-            public Render<EntityParticleSpray> createRenderFor(RenderManager manager) {
-                return (Render<EntityParticleSpray>) new InstantParticleRender(manager);
+            @Override
+            public BlockRenderLayer getBlockLayer() {
+                return BlockRenderLayer.CUTOUT;
             }
-        });
 
-        if (Loader.isModLoaded("flammpfeil.slashblade")) {
-            RenderingRegistry.registerEntityRenderingHandler(EntitySlashDimensionEx.class, new IRenderFactory<EntitySlashDimensionEx>() {
-                public Render createRenderFor(RenderManager manager) {
-                    return (Render) new RenderSlashDimensionEx(manager);
-                }
-            });
-
-            RenderingRegistry.registerEntityRenderingHandler(EntityDriveEx.class, new IRenderFactory<EntityDriveEx>() {
-                public Render createRenderFor(RenderManager manager) {
-                    return (Render) new RenderDriveEx(manager);
-                }
-            });
-        }
+            @Override
+            public boolean isFullCube(IBlockState state) {
+                return false;
+            }
+        };
     }
 
-    private static final ResourceLocation fluidLocation = new ResourceLocation(MoreElectricTools.MODID, "fluid");
+    // 已移除 onTeBlockInit 方法 - 所有机器已删除
+
+    public static void onBlockRecipeInit() {
+        // Compressor recipe for titanium block
+        Recipes.compressor.addRecipe(
+                Recipes.inputFactory.forOreDict("ingotTitanium", 9), null, false, new ItemStack(titaniumBlock));
+    }
+
+    @SubscribeEvent
+    public static void onCommonBlockInit(RegistryEvent.Register<Block> event) {
+        event.getRegistry().register(niobiumOre);
+        event.getRegistry().register(titaniumOre);
+        event.getRegistry().register(titaniumBlock);
+        event.getRegistry().register(titaniumScaffold);
+        // 所有机器方块已移除
+    }
+
+    @SubscribeEvent
+    public static void onCommonBlockItemInit(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemBlock(niobiumOre).setRegistryName(niobiumOre.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(titaniumOre).setRegistryName(titaniumOre.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(titaniumBlock).setRegistryName(titaniumBlock.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(titaniumScaffold).setRegistryName(titaniumScaffold.getRegistryName()));
+        // 所有机器ItemBlock已移除
+    }
+
+    private static ItemStack getAllTypeStack(ItemStack itemstack) {
+        return new ItemStack(itemstack.getItem(), 1, OreDictionary.WILDCARD_VALUE);
+    }
+
+    private static ItemStack getAllTypeStack(Item item) {
+        return new ItemStack(item, 1, OreDictionary.WILDCARD_VALUE);
+    }
 }

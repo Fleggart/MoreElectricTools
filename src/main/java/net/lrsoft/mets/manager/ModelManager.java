@@ -6,13 +6,9 @@ import net.lrsoft.mets.blade.EntityDriveEx;
 import net.lrsoft.mets.blade.EntitySlashDimensionEx;
 import net.lrsoft.mets.blade.RenderDriveEx;
 import net.lrsoft.mets.blade.RenderSlashDimensionEx;
-// import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;  // 已移除
-// import net.lrsoft.mets.block.tileentity.TileEntityWirelessPowerTransmissionNode;  // 已移除
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.blade.BladeModelManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-// import net.lrsoft.mets.renderer.LighterRenderer;  // 已移除
-// import net.lrsoft.mets.renderer.TransmissionNodeRenderer;  // 已移除
 import net.lrsoft.mets.renderer.particle.EntityParticleGroup;
 import net.lrsoft.mets.renderer.particle.EntityParticleSpray;
 import net.lrsoft.mets.renderer.particle.InstantParticleRender;
@@ -29,16 +25,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fluids.BlockFluidBase;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(value = Side.CLIENT, modid = MoreElectricTools.MODID)
@@ -64,25 +55,20 @@ public class ModelManager {
 
     @SubscribeEvent
     public static void onBlockModelInit(ModelRegistryEvent event) {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.niobiumOre), 0, new ModelResourceLocation(BlockManager.niobiumOre.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumOre), 0, new ModelResourceLocation(BlockManager.titaniumOre.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumBlock), 0, new ModelResourceLocation(BlockManager.titaniumBlock.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumScaffold), 0, new ModelResourceLocation(BlockManager.titaniumScaffold.getRegistryName(), "normal"));
-
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticPedestal), 0, new ModelResourceLocation(BlockManager.geomagneticPedestal.getRegistryName(), "normal"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticAntenna), 0, new ModelResourceLocation(BlockManager.geomagneticAntenna.getRegistryName(), "normal"));
-
-        // ========== 已移除 ==========
-        // ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLighterBlock.class, new LighterRenderer());
-        // ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWirelessPowerTransmissionNode.class, new TransmissionNodeRenderer());
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.niobiumOre), 0, 
+                new ModelResourceLocation(BlockManager.niobiumOre.getRegistryName(), "normal"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumOre), 0, 
+                new ModelResourceLocation(BlockManager.titaniumOre.getRegistryName(), "normal"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumBlock), 0, 
+                new ModelResourceLocation(BlockManager.titaniumBlock.getRegistryName(), "normal"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.titaniumScaffold), 0, 
+                new ModelResourceLocation(BlockManager.titaniumScaffold.getRegistryName(), "normal"));
+        // 所有机器模型已移除
     }
 
     @SubscribeEvent
     public static void onFluidModelInit(ModelRegistryEvent event) {
-        // ========== 仅保留原油渲染 ==========
-        registerFluidRender(FluidManager.crudeOilBlock, FluidManager.crudeOil);
-        // ========== 已移除柴油渲染 ==========
-        // registerFluidRender(FluidManager.dieselOilBlock, FluidManager.dieselOil);
+        // 所有流体模型已移除
     }
 
     @SubscribeEvent
@@ -115,20 +101,4 @@ public class ModelManager {
     }
 
     private static final ResourceLocation fluidLocation = new ResourceLocation(MoreElectricTools.MODID, "fluid");
-
-    public static void registerFluidRender(BlockFluidBase blockFluid, Fluid fluid) {
-        final Item itemFluid = Item.getItemFromBlock(blockFluid);
-        ModelLoader.setCustomMeshDefinition(itemFluid, new ItemMeshDefinition() {
-            @Override
-            public ModelResourceLocation getModelLocation(ItemStack stack) {
-                return new ModelResourceLocation(fluidLocation, "type=" + fluid.getName());
-            }
-        });
-        ModelLoader.setCustomStateMapper(blockFluid, new StateMapperBase() {
-            @Override
-            protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
-                return new ModelResourceLocation(fluidLocation, "type=" + fluid.getName());
-            }
-        });
-    }
 }

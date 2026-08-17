@@ -83,5 +83,5 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
     compile files ("libs/industrialcraft-2-2.8.188-ex112-dev.jar")
     compile files ("libs/SlashBlade-mc1.12-r32-deobf.jar")
+    implementation fg.deobf("curse.maven:baubles-227083:2518667")
 }
-

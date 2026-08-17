@@ -27,10 +27,7 @@ version = "1.662"
 group = "net.lrsoft.mets" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "mets"
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
-}
+
 
 minecraft {
     mappings channel: 'snapshot', version: '20171003-1.12'

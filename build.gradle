@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
     compile files ("libs/industrialcraft-2-2.8.188-ex112-dev.jar")
     compile files ("libs/SlashBlade-mc1.12-r32-deobf.jar")
     implementation fg.deobf("curse.maven:tls-306385:3314856") //The Last Smith

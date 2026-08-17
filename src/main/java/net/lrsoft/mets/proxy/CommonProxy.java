@@ -5,7 +5,6 @@ import net.lrsoft.mets.MoreElectricTools;
 import net.lrsoft.mets.block.MetsBlockWithTileEntity;
 import net.lrsoft.mets.manager.BlockManager;
 import net.lrsoft.mets.manager.ConfigManager;
-import net.lrsoft.mets.manager.FluidManager;
 import net.lrsoft.mets.manager.ItemManager;
 import net.lrsoft.mets.manager.OreDictManager;
 import net.lrsoft.mets.manager.WorldGenManager;
@@ -15,18 +14,19 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
 public class CommonProxy 
 {
 	public void preInit(FMLPreInitializationEvent event) 
 	{
-		FluidManager.onFluidInit();
+		// FluidManager 已移除
 	}
 
 	public void init(FMLInitializationEvent event) 
 	{
 		MetsBlockWithTileEntity.buildDummies();
 		BlockManager.onBlockRecipeInit();
-		FluidManager.onRecipeInit();
+		// FluidManager.onRecipeInit() 已移除
 		OreDictManager.onOreDictInit();
 		if(ConfigManager.EnableOreGenerate)
 		{

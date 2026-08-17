@@ -20,7 +20,6 @@ apply plugin: 'net.minecraftforge.gradle'
 
 
 version = "1.662"
-group = "net.lrsoft.mets" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "mets"
 
 

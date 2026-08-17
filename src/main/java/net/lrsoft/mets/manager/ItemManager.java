@@ -9,7 +9,8 @@ import net.lrsoft.mets.item.battery.SuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.ThoriumBattery;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.util.SpecialRecipesHelper;
+// ========== 已移除 ==========
+// import net.lrsoft.mets.util.SpecialRecipesHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -100,13 +101,13 @@ public class ItemManager {
                         'L', Recipes.inputFactory.forOreDict("dustThorium")
                 });
         
-        // Other
-        try {
-            SpecialRecipesHelper.onInitLiquidRecipe();
-        } catch (Exception expt) {
-            System.out.println("[METS]:Fail to init liquid recipe.");
-            expt.printStackTrace();
-        }
+        // ========== 已移除柴油液体配方初始化 ==========
+        // try {
+        //     SpecialRecipesHelper.onInitLiquidRecipe();
+        // } catch (Exception expt) {
+        //     System.out.println("[METS]:Fail to init liquid recipe.");
+        //     expt.printStackTrace();
+        // }
     }
     
     public static ItemStack getAllTypeStack(ItemStack itemstack) {

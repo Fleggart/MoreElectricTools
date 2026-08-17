@@ -16,15 +16,13 @@ import ic2.api.recipe.Recipes;
 import ic2.core.SemiFluidFuelManager;
 import ic2.core.recipe.BasicMachineRecipeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-import net.lrsoft.mets.manager.FluidManager;
+// import net.lrsoft.mets.manager.FluidManager;  // 已移除
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class SpecialRecipesHelper {
     public static IBasicMachineRecipeManager neutronPolymerizerRecipes = new BasicMachineRecipeManager();
-    // ========== 已移除柴油发电机燃料管理器 ==========
-    // public static ISemiFluidFuelManager dieselGeneratorAcceptManager = new SemiFluidFuelManager();
     public static IBasicMachineRecipeManager electricBlastFurnaceRecipes = new BasicMachineRecipeManager();
 
     static {
@@ -75,7 +73,4 @@ public class SpecialRecipesHelper {
             electricBlastFurnaceRecipes.addRecipe(result.getInput(), result.getMetaData(), false, group);
         }
     }
-
-    // ========== 已移除柴油发电机液体配方初始化 ==========
-    // public static void onInitLiquidRecipe() throws Exception { ... }
 }

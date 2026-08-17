@@ -9,8 +9,6 @@ import net.lrsoft.mets.item.battery.SuperLapotronCrystal;
 import net.lrsoft.mets.item.battery.ThoriumBattery;
 import net.lrsoft.mets.item.blade.BladeManager;
 import net.lrsoft.mets.item.crafting.ItemCraftingManager;
-// ========== 已移除 ==========
-// import net.lrsoft.mets.util.SpecialRecipesHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,14 +26,11 @@ public class ItemManager {
     public static LithiumBattery lithiumBattery;
     public static ThoriumBattery thoriumBattery;
     
-    
     static {
         superLapotronCrystal = new SuperLapotronCrystal();
-        
         advancedLithiumBattery = new AdvancedLithiumBattery();
         lithiumBattery = new LithiumBattery();
         thoriumBattery = new ThoriumBattery();
-        
     }
     
     @SubscribeEvent
@@ -100,14 +95,6 @@ public class ItemManager {
                         'S', IC2Items.getItem("casing", "lead"),
                         'L', Recipes.inputFactory.forOreDict("dustThorium")
                 });
-        
-        // ========== 已移除柴油液体配方初始化 ==========
-        // try {
-        //     SpecialRecipesHelper.onInitLiquidRecipe();
-        // } catch (Exception expt) {
-        //     System.out.println("[METS]:Fail to init liquid recipe.");
-        //     expt.printStackTrace();
-        // }
     }
     
     public static ItemStack getAllTypeStack(ItemStack itemstack) {

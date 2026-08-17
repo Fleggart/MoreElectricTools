@@ -9,9 +9,9 @@ public class ConfigManager {
     public static boolean WeaponDamagesTerrain = true;
     @Config.RequiresMcRestart
     public static boolean EnableOreGenerate = true;
-    @Config.RequiresMcRestart
-    public static boolean EnableMoreStirlingGenerator = false;
     // ========== 已移除 ==========
+    // @Config.RequiresMcRestart
+    // public static boolean EnableMoreStirlingGenerator = false;
     // @Config.RequiresMcRestart
     // public static boolean EnableFastTESR = false;
     // @Config.RequiresMcRestart

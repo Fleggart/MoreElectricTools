@@ -78,10 +78,9 @@ public class BladeBloodRev {
 			Object[] recipetable = new Object[] {
 					"CXC",
 					"XBX",
-					"CZC",
+					"CXC",
 					Character.valueOf('B'), custombladeReqired,
 					Character.valueOf('X'), ItemCraftingManager.super_iridium_compress_plate,
-					Character.valueOf('Z'), ItemCraftingManager.nano_living_metal,//ItemManager.getAllTypeStack(ItemManager),
 					Character.valueOf('C'), ItemCraftingManager.niobium_titanium_plate
 			};
 

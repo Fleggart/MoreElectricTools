@@ -27,66 +27,10 @@ import ic2.core.util.Util;
 import ic2.core.profile.Version;
 import net.lrsoft.mets.MoreElectricTools;
 import net.lrsoft.mets.block.tileentity.*;
-import net.lrsoft.mets.block.tileentity.GESU.*;
-import net.lrsoft.mets.block.tileentity.OilRig.*;
-import net.lrsoft.mets.block.tileentity.LargeFabricator.*;
 
 public enum MetsBlockWithTileEntity implements ITeBlock {
-    // ========== 储能 ==========
-    lesu((Class)TileEntityLESU.class, 0, false, Util.allFacings, true, HarvestTool.Wrench, DefaultDrop.Self, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    eesu((Class)TileEntityEESU.class, 2, false, Util.allFacings, true, HarvestTool.Wrench, DefaultDrop.Self, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 充电板 ==========
-    chargepad_eesu((Class)TileEntityChargepadEESU.class, 8, true, Util.downSideFacings, true, HarvestTool.Wrench, DefaultDrop.Self, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    chargepad_lesu((Class)TileEntityChargepadLESU.class, 9, true, Util.downSideFacings, true, HarvestTool.Wrench, DefaultDrop.Self, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 加工机器 ==========
-    advanced_blast_furnace((Class)TileEntityAdvancedBlastFurnace.class, 5, true, Util.allFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    advanced_macerator((Class)TileEntityAdvancedMacerator.class, 6, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    advanced_compressor((Class)TileEntityAdvancedCompressor.class, 7, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    extruding_machine((Class)TileEntityExtrudingMachine.class, 12, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    bending_machine((Class)TileEntityBlendingMachine.class, 13, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    cutting_machine((Class)TileEntityCuttingMachine.class, 14, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 存储 ==========
-    titanium_storage_box((Class)TileEntityTitaniumStorageBox.class, 15, false, Util.noFacings, false, HarvestTool.Wrench, DefaultDrop.Self, 3.0F, 100.0F, EnumRarity.EPIC, IC2Material.MACHINE, false),
-    titanium_tank((Class)TileEntityTitaniumTank.class, 36, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 高级加工 ==========
-    neutron_polymerizer((Class)TileEntityNeutronPolymerizer.class, 22, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    electric_blast_furnace((Class)TileEntityElectricBlastFurnace.class, 23, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== GESU 巨型储能 ==========
-    gesu_core((Class)TileEntityGESUCore.class, 24, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    gesu_input((Class)TileEntityGESUInputPort.class, 25, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    gesu_output((Class)TileEntityGESUOutputPort.class, 26, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    gesu_output_luv((Class)TileEntityGESULuVOutputPort.class, 32, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 变压器 ==========
-    transformer_iv((Class)TileEntityTransformerIV.class, 33, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    transformer_luv((Class)TileEntityTransformerLuV.class, 34, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 石油钻井平台 ==========
-    oil_rig_core((Class)TileEntityOilRigCore.class, 27, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    oil_rig_input((Class)TileEntityOilRigInput.class, 28, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    oil_rig_output((Class)TileEntityOilRigOutput.class, 29, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    oil_rig_base((Class)TileEntityOilRigBase.class, 30, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    oil_rig_panel((Class)TileEntityOilRigPanel.class, 31, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    dimension_oil_rig_core((Class)TileEntityDimensionOilRigCore.class, 41, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-
-    // ========== 大型制造机 ==========
-    fabricator_core((Class)TileEntityFabricatorCore.class, 37, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    fabricator_input((Class)TileEntityFabricatorInput.class, 38, true, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    fabricator_tank((Class)TileEntityFabricatorTank.class, 39, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false),
-    fabricator_scrap((Class)TileEntityFabricatorScrap.class, 40, false, Util.horizontalFacings, true, HarvestTool.Wrench, DefaultDrop.Machine, 2.0F, 10.0F, EnumRarity.COMMON, IC2Material.MACHINE, false);
-
-    // ========== 已移除 ==========
-    // drop_generator, advanced_kinetic_generator, super_kinetic_generator,
-    // advanced_stirling_generator, advanced_semifluid_generator,
-    // experience_generator, advanced_solar_generator, photon_resonance_solar_generator,
-    // ultimate_photon_resonance_solar_generator, geomagnetic_generator, diesel_generator,
-    // laser_tower, advanced_laser_tower, wireless_power_transmission_node
+    // 所有机器已移除，保留空枚举
+    ;
 
     public static final ResourceLocation loc = new ResourceLocation(MoreElectricTools.MODID, "te");
     private Class<? extends TileEntityBlock> teClass;
@@ -121,29 +65,11 @@ public enum MetsBlockWithTileEntity implements ITeBlock {
     private final float explosionResistance;private final EnumRarity rarity;private final Material material;private final boolean transparent;private TileEntityBlock dummyTe;private ITePlaceHandler placeHandler;
 
     static {
-        for (MetsBlockWithTileEntity block : values()) {
-            TileEntity.register(loc.getResourceDomain() + ':' + block.getName(), block.getTeClass());
-        }
-        VALUES = values();
+        VALUES = new MetsBlockWithTileEntity[0];
     }
 
     public static void buildDummies() {
-        ModContainer mc = Loader.instance().activeModContainer();
-        if (mc != null && MoreElectricTools.MODID.equals(mc.getModId())) {
-            MetsBlockWithTileEntity[] tileEntities = VALUES;
-            for (MetsBlockWithTileEntity block : tileEntities) {
-                if (block.teClass != null) {
-                    try {
-                        block.dummyTe = block.teClass.newInstance();
-                    } catch (Exception expt) {
-                        System.out.println("[METS]:Failed to init a tile entity.");
-                        expt.printStackTrace();
-                    }
-                }
-            }
-        } else {
-            throw new IllegalAccessError("Don't mess with this please.");
-        }
+        // No machines to build dummies for
     }
 
     @Override

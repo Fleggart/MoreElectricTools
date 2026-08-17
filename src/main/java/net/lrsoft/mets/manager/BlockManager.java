@@ -1,73 +1,42 @@
 package net.lrsoft.mets.manager;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
-
-import ic2.api.energy.event.EnergyTileLoadEvent;
-import ic2.api.event.TeBlockFinalCallEvent;
-import ic2.api.item.ElectricItem;
-import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
-import ic2.api.tile.IEnergyStorage;
-import ic2.core.IC2;
 import ic2.core.block.BlockTileEntity;
 import ic2.core.block.TeBlockRegistry;
 import ic2.core.ref.TeBlock;
 import ic2.core.util.StackUtil;
 import net.lrsoft.mets.MoreElectricTools;
-// import net.lrsoft.mets.block.LighterBlock;  // 已移除
 import net.lrsoft.mets.block.MetsBlockWithTileEntity;
 import net.lrsoft.mets.block.UniformResourceBlock;
-import net.lrsoft.mets.block.tileentity.IMets;
-// import net.lrsoft.mets.block.tileentity.TileEntityLighterBlock;  // 已移除
-import net.lrsoft.mets.item.crafting.ItemCraftingManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import scala.reflect.api.Trees.NewApi;
-import ic2.core.block.ITeBlock;
 
 @Mod.EventBusSubscriber(modid = MoreElectricTools.MODID)
 public class BlockManager {
     public static Block niobiumOre;
     public static Block titaniumOre;
     public static Block titaniumBlock;
-    // public static Block lighterBlock;  // 已移除
-
-    public static Block geomagneticPedestal;
-    public static Block geomagneticAntenna;
-
     public static Block titaniumScaffold;
 
     static {
         niobiumOre = new UniformResourceBlock("niobium_ore", 2.5f, 2);
         titaniumOre = new UniformResourceBlock("titanium_ore", 2.5f, 2);
         titaniumBlock = new UniformResourceBlock("titanium_block", Material.IRON, 5.0f, 1);
-        // lighterBlock = new LighterBlock();  // 已移除
-
-        geomagneticPedestal = new UniformResourceBlock("geomagnetic_pedestal", 2.5f, -1);
-        geomagneticAntenna = new UniformResourceBlock("geomagnetic_antenna", 2.5f, -1);
-
+        
         titaniumScaffold = new UniformResourceBlock("titanium_scaffold", Material.GLASS, SoundType.METAL, 5.0f, 1) {
             @Override
             public boolean isOpaqueCube(IBlockState state) {
@@ -107,8 +76,7 @@ public class BlockManager {
     }
 
     public static void onBlockRecipeInit() {
-        // All machine recipes have been removed.
-        // Only keep the compressor recipe for titanium block.
+        // Compressor recipe for titanium block
         Recipes.compressor.addRecipe(
                 Recipes.inputFactory.forOreDict("ingotTitanium", 9), null, false, new ItemStack(titaniumBlock));
     }
@@ -118,16 +86,8 @@ public class BlockManager {
         event.getRegistry().register(niobiumOre);
         event.getRegistry().register(titaniumOre);
         event.getRegistry().register(titaniumBlock);
-
-        // event.getRegistry().register(lighterBlock);  // 已移除
-
-        event.getRegistry().register(geomagneticPedestal);
-        event.getRegistry().register(geomagneticAntenna);
-
         event.getRegistry().register(titaniumScaffold);
-        // GameRegistry.registerTileEntity(TileEntityLighterBlock.class,
-        //         new ResourceLocation(MoreElectricTools.MODID, "lighter_block"));  // 已移除
-        FluidManager.onFluidBlockInit(event);
+        // 所有机器方块已移除
     }
 
     @SubscribeEvent
@@ -136,9 +96,7 @@ public class BlockManager {
         event.getRegistry().register(new ItemBlock(titaniumOre).setRegistryName(titaniumOre.getRegistryName()));
         event.getRegistry().register(new ItemBlock(titaniumBlock).setRegistryName(titaniumBlock.getRegistryName()));
         event.getRegistry().register(new ItemBlock(titaniumScaffold).setRegistryName(titaniumScaffold.getRegistryName()));
-
-        event.getRegistry().register(new ItemBlock(geomagneticPedestal).setRegistryName(geomagneticPedestal.getRegistryName()));
-        event.getRegistry().register(new ItemBlock(geomagneticAntenna).setRegistryName(geomagneticAntenna.getRegistryName()));
+        // 所有机器ItemBlock已移除
     }
 
     private static ItemStack getAllTypeStack(ItemStack itemstack) {

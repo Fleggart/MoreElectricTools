@@ -76,7 +76,7 @@ public class BladeKineticEnergy {
 					Character.valueOf('B'), custombladeReqired,
 					Character.valueOf('C'), IC2Items.getItem("crafting", "iridium"),
 					Character.valueOf('X'), IC2Items.getItem("te", "manual_kinetic_generator"),
-					Character.valueOf('Y'), ItemCraftingManager.super_circuit
+					Character.valueOf('Y'), ItemCraftingManager.niobium_titanium_plate
 			};
 
 			if (Loader.isModLoaded("lastsmith")) {

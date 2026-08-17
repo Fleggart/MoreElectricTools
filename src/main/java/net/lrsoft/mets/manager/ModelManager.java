@@ -72,16 +72,17 @@ public class ModelManager {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticPedestal), 0, new ModelResourceLocation(BlockManager.geomagneticPedestal.getRegistryName(), "normal"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockManager.geomagneticAntenna), 0, new ModelResourceLocation(BlockManager.geomagneticAntenna.getRegistryName(), "normal"));
 
-        // ========== 已移除打火机渲染器 ==========
+        // ========== 已移除 ==========
         // ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLighterBlock.class, new LighterRenderer());
-        // ========== 已移除无线传输节点渲染器 ==========
         // ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWirelessPowerTransmissionNode.class, new TransmissionNodeRenderer());
     }
 
     @SubscribeEvent
     public static void onFluidModelInit(ModelRegistryEvent event) {
+        // ========== 仅保留原油渲染 ==========
         registerFluidRender(FluidManager.crudeOilBlock, FluidManager.crudeOil);
-        registerFluidRender(FluidManager.dieselOilBlock, FluidManager.dieselOil);
+        // ========== 已移除柴油渲染 ==========
+        // registerFluidRender(FluidManager.dieselOilBlock, FluidManager.dieselOil);
     }
 
     @SubscribeEvent

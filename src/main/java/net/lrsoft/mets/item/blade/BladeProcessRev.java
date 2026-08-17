@@ -73,14 +73,14 @@ public class BladeProcessRev {
     
 	    if (ConfigManager.EnableEUSlashBladeRecipe) {
             Object[] recipetable = new Object[] {
-                    "XXC",
+                    "CXC",
                     "YBY",
-                    "CZZ",
+                    "CZC",
                     Character.valueOf('B'), custombladeReqired,
                     Character.valueOf('X'), ItemCraftingManager.super_iridium_compress_plate,
                     Character.valueOf('Z'), ItemCraftingManager.nano_living_metal,//ItemManager.getAllTypeStack(ItemManager),
                     Character.valueOf('Y'), ItemManager.getAllTypeStack(ItemManager.superLapotronCrystal),
-                    Character.valueOf('C'), IC2Items.getItem("iridium_reflector")
+                    Character.valueOf('C'), ItemCraftingManager.niobium_titanium_plate
             };
 
             if (Loader.isModLoaded("lastsmith")){

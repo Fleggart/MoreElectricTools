@@ -72,12 +72,11 @@ public class BladeKineticEnergy {
 			Object[] recipetable = new Object[] {
 					"CYC",
 					"XBX",
-					"CLC",
+					"CYC",
 					Character.valueOf('B'), custombladeReqired,
 					Character.valueOf('C'), IC2Items.getItem("crafting", "iridium"),
 					Character.valueOf('X'), IC2Items.getItem("te", "manual_kinetic_generator"),
-					Character.valueOf('Y'), ItemCraftingManager.super_circuit,
-					Character.valueOf('L'), ItemManager.getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
+					Character.valueOf('Y'), ItemCraftingManager.super_circuit
 			};
 
 			if (Loader.isModLoaded("lastsmith")) {

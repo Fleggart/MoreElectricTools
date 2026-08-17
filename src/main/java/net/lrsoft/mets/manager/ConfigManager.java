@@ -9,13 +9,6 @@ public class ConfigManager {
     public static boolean WeaponDamagesTerrain = true;
     @Config.RequiresMcRestart
     public static boolean EnableOreGenerate = true;
-    // ========== 已移除 ==========
-    // @Config.RequiresMcRestart
-    // public static boolean EnableMoreStirlingGenerator = false;
-    // @Config.RequiresMcRestart
-    // public static boolean EnableFastTESR = false;
-    // @Config.RequiresMcRestart
-    // public static boolean EnableLighterDynamicSource = true;
     @Config.RequiresMcRestart
     public static boolean EnableEUSlashBladeRecipe = true;
 
@@ -35,10 +28,5 @@ public class ConfigManager {
     public static double AdvancedQuantumSuitDamageEnergyCost = 10000d;
     @Config.RequiresWorldRestart
     public static double AdvancedQuantumSuitCureCost = 30000d;
-
-    // ========== 已移除激光塔配置 ==========
-    // @Config.RequiresWorldRestart
-    // public static double LaserTowerCost = 250d;
-    // @Config.RequiresWorldRestart
-    // public static double AdvancedLaserTowerCost = 2500d;
+    // 所有机器配置已移除
 }

@@ -62,12 +62,9 @@ public class BladeAdvanced {
 
 		if (ConfigManager.EnableEUSlashBladeRecipe) {
 			Object[] recipetable =new Object[]{
-					"CYC",
-					"XBX",
-					"CLC",
-					Character.valueOf('X'), IC2Items.getItem("crafting", "alloy"),
-					Character.valueOf('Y'), IC2Items.getItem("crafting", "advanced_circuit"),
-					Character.valueOf('L'), ItemManager.getAllTypeStack(IC2Items.getItem("energy_crystal")),
+					"CCC",
+					"CBC",
+					"CCC",
 					Character.valueOf('B'), custombladeReqired,
 					Character.valueOf('C'), ItemCraftingManager.niobium_titanium_plate
 			};

@@ -77,7 +77,7 @@ public class BladeBloodRev {
 		if (ConfigManager.EnableEUSlashBladeRecipe) {
 			Object[] recipetable = new Object[] {
 					"CXC",
-					"YBY",
+					"XBX",
 					"CZC",
 					Character.valueOf('B'), custombladeReqired,
 					Character.valueOf('X'), ItemCraftingManager.super_iridium_compress_plate,

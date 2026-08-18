@@ -26,18 +26,8 @@ public class SpecialRecipesHelper {
     public static IBasicMachineRecipeManager electricBlastFurnaceRecipes = new BasicMachineRecipeManager();
 
     static {
-        // 移除 nano_living_metal -> neutron_plate 的配方（这两个物品已被删除）
-
         neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(new ItemStack(Items.IRON_INGOT)),
                 null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.niobium_titanium_ingot)});
-
-        // 移除 niobium_titanium_ingot -> nano_living_metal 的配方（nano_living_metal 已被删除）
-
-        neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(IC2Items.getItem("crafting", "advanced_circuit")),
-                null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.super_circuit)});
-
-        neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(IC2Items.getItem("cable", "type:glass,insulation:0")),
-                null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.superconducting_cable)});
 
         neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(new ItemStack(ItemCraftingManager.titanium_ingot)),
                 null, false, new ItemStack[] {IC2Items.getItem("misc_resource", "iridium_ore")});

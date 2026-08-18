@@ -21,7 +21,8 @@ public class BladeManager {
 	
 	public static void onBladeInit() {
 		if (Loader.isModLoaded("lastsmith")) {
-			trblade_first = (Item)(new ItemMETSNamedBladeTLS(30000, 128, 2, ToolMaterial.IRON, 7.0f)).setRegistryName("trblade_first");
+			trblade_first = (Item)(new ItemMETSNamedBladeTLS(3
+															 50000, 128, 2, ToolMaterial.IRON, 7.0f)).setRegistryName("trblade_first");
 			hyperblade_second = (Item)(new ItemMETSNamedBladeTLS(1000000, 512, 3, ToolMaterial.IRON, 7.0f)).setRegistryName("hyperblade_second");
 			mrblade_final = (Item)(new ItemMETSNamedBladeTLS(5000000, 8192, 4, ToolMaterial.DIAMOND, 20.0f)).setRegistryName("mrblade_final");
 			kineticenergyblade_final = (Item)(new ItemMETSNamedBladeTLS(5000000, 8192, 4, ToolMaterial.DIAMOND, 20.0f)).setRegistryName("kineticenergyblade_final");
@@ -32,7 +33,7 @@ public class BladeManager {
 			fox_faerie = (Item)(new ItemMETSNamedBladeTLS(2000000, 2048, 3, ToolMaterial.DIAMOND, 15.0f)).setRegistryName("fox_faerie");
 			fox_elf = (Item)(new ItemMETSNamedBladeTLS(2000000, 2048, 3, ToolMaterial.DIAMOND, 15.0f)).setRegistryName("fox_elf");
 		} else {
-			trblade_first = (Item)(new ItemMETSNamedBlade(30000, 128, 2, ToolMaterial.IRON, 7.0f)).setRegistryName("trblade_first");
+			trblade_first = (Item)(new ItemMETSNamedBlade(50000, 128, 2, ToolMaterial.IRON, 7.0f)).setRegistryName("trblade_first");
 			hyperblade_second = (Item)(new ItemMETSNamedBlade(1000000, 512, 3, ToolMaterial.IRON, 7.0f)).setRegistryName("hyperblade_second");
 			mrblade_final = (Item)(new ItemMETSNamedBlade(5000000, 8192, 4, ToolMaterial.DIAMOND, 20.0f)).setRegistryName("mrblade_final");
 			kineticenergyblade_final = (Item)(new ItemMETSNamedBlade(5000000, 8192, 4, ToolMaterial.DIAMOND, 20.0f)).setRegistryName("kineticenergyblade_final");

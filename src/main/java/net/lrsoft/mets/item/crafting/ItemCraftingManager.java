@@ -61,12 +61,6 @@ public class ItemCraftingManager {
 	public static Item titanium_nugget;
 	public static Item lead_nugget;
 	
-	public static Item plant_extract;
-	
-	public static Item nano_living_metal;
-	public static Item living_circuit;
-	public static Item field_generator;
-	public static Item neutron_plate;
 	static 
 	{
 		niobium_crushed = new UniformCraftingItem("niobium_crushed", 64);
@@ -108,26 +102,6 @@ public class ItemCraftingManager {
 		tin_nugget = new UniformCraftingItem("tin_nugget", 64);
 		titanium_nugget = new UniformCraftingItem("titanium_nugget", 64);
 		lead_nugget = new UniformCraftingItem("lead_nugget", 64);
-		
-		plant_extract = new UniformCraftingItem("plant_extract", 64);
-		nano_living_metal = new UniformCraftingItem("nano_living_metal", 64) {
-			@Override
-			public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-				String info = Localization.translate("mets.info.nano_tip");
-				tooltip.add(info);
-			}
-		};
-		
-		living_circuit  = new UniformCraftingItem("living_circuit", 64) {
-			@Override
-			public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-				String info = Localization.translate("mets.info.nano_tip");
-				tooltip.add(info);
-			}
-		};
-		
-		field_generator = new UniformCraftingItem("field_generator", 64);
-		neutron_plate = new UniformCraftingItem("neutron_plate", 64);
 	}
 	
 	public static void onCraftingItemInit(RegistryEvent.Register<Item> event)
@@ -165,12 +139,6 @@ public class ItemCraftingManager {
 		event.getRegistry().register(tin_nugget);
 		event.getRegistry().register(titanium_nugget);
 		event.getRegistry().register(lead_nugget);
-		
-		event.getRegistry().register(plant_extract);
-		event.getRegistry().register(nano_living_metal);
-		event.getRegistry().register(living_circuit);
-		event.getRegistry().register(field_generator);
-		event.getRegistry().register(neutron_plate);
 	}
 	
 	
@@ -237,17 +205,6 @@ public class ItemCraftingManager {
 				new ModelResourceLocation(titanium_nugget.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(lead_nugget, 0,
 				new ModelResourceLocation(lead_nugget.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(plant_extract, 0,
-				new ModelResourceLocation(plant_extract.getRegistryName(), "inventory"));
-		
-		ModelLoader.setCustomModelResourceLocation(nano_living_metal, 0,
-				new ModelResourceLocation(nano_living_metal.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(living_circuit, 0,
-				new ModelResourceLocation(living_circuit.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(field_generator, 0,
-				new ModelResourceLocation(field_generator.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(neutron_plate, 0,
-				new ModelResourceLocation(neutron_plate.getRegistryName(), "inventory"));
 	}
 	
 	public static void onCraftingItemOreDictInit()
@@ -270,7 +227,6 @@ public class ItemCraftingManager {
 		OreDictionary.registerOre("plateNiobiumTitanium", niobium_titanium_plate);*/
 		
 		OreDictionary.registerOre("circuitElite", super_circuit);
-		OreDictionary.registerOre("circuitUltimate", living_circuit);
 		
 		OreDictionary.registerOre("nuggetCopper", copper_nugget);
 		OreDictionary.registerOre("nuggetTin", tin_nugget);
@@ -322,9 +278,6 @@ public class ItemCraftingManager {
 		
 		Recipes.metalformerRolling.addRecipe(Recipes.inputFactory.forStack(new ItemStack(niobium_titanium_ingot)),
 				null, false, new ItemStack(niobium_titanium_plate));
-		
-		//Nano robot
-		UuIndex.instance.add(new ItemStack(nano_living_metal), 20e3);
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(superconducting_cable, 2),
 				new Object[] {
@@ -426,38 +379,5 @@ public class ItemCraftingManager {
 						'R', thorium_dust,
 						'E', IC2Items.getItem("crafting", "scrap_box")
 				});
-		
-		//Other
-		Recipes.advRecipes.addRecipe(new ItemStack(plant_extract),
-				new Object[] {
-						"TRT",
-						"RER", 
-						"TRT", 
-						'T', OreDictionary.getOres("treeSapling"), //treeSapling
-						'R', IC2Items.getItem("crafting", "scrap_box"),
-						'E', IC2Items.getItem("dust", "energium")
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(living_circuit),
-				new Object[] {
-						"XTX",
-						"LSL",
-						"XTX",
-						'S', super_circuit,
-						'T', super_iridium_compress_plate,
-						'L', nano_living_metal,
-						'X', superconducting_cable
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(field_generator),
-				new Object[] {
-						"TLT",
-						"LSL",
-						"TLT",
-						'S', Items.ENDER_EYE,
-						'L', Recipes.inputFactory.forOreDict("circuitUltimate"),//living_circuit,
-						'T', superconducting_cable
-				});
-		
 	}
-}
+ }

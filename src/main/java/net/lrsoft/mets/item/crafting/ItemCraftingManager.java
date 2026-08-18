@@ -44,8 +44,6 @@ public class ItemCraftingManager {
 	public static Item thorium_dust;
 	public static Item thorium_scrap;
 	
-	public static Item lens;
-	public static Item diamond_lens;
 	public static Item rocket;
 	
 	public static Item superconducting_cable;
@@ -77,8 +75,6 @@ public class ItemCraftingManager {
 		thorium_dust = new UniformCraftingItem("thorium_dust", 64);
 		thorium_scrap = new UniformCraftingItem("thorium_scrap", 64);
 		
-		lens = new UniformCraftingItem("lens", 64);
-		diamond_lens = new UniformCraftingItem("diamond_lens", 64);
 		rocket = new UniformCraftingItem("rocket", 64);
 		
 		niobium_titanium_dust = new UniformCraftingItem("niobium_titanium_dust", 64);	
@@ -120,13 +116,11 @@ public class ItemCraftingManager {
 		event.getRegistry().register(thorium_dust);
 		event.getRegistry().register(thorium_scrap);
 		
+		event.getRegistry().register(rocket);
+		
 		event.getRegistry().register(niobium_titanium_dust);
 		event.getRegistry().register(niobium_titanium_ingot);
 		event.getRegistry().register(niobium_titanium_plate);
-		
-		event.getRegistry().register(lens);
-		event.getRegistry().register(diamond_lens);
-		event.getRegistry().register(rocket);
 		
 		event.getRegistry().register(super_iridium_alloy);
 		event.getRegistry().register(superconducting_cable);
@@ -169,19 +163,15 @@ public class ItemCraftingManager {
 		ModelLoader.setCustomModelResourceLocation(thorium_scrap, 0,
 				new ModelResourceLocation(thorium_scrap.getRegistryName(), "inventory"));
 		
+		ModelLoader.setCustomModelResourceLocation(rocket, 0,
+				new ModelResourceLocation(rocket.getRegistryName(), "inventory"));
+		
 		ModelLoader.setCustomModelResourceLocation(niobium_titanium_dust, 0,
 				new ModelResourceLocation(niobium_titanium_dust.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(niobium_titanium_ingot, 0,
 				new ModelResourceLocation(niobium_titanium_ingot.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(niobium_titanium_plate, 0,
 				new ModelResourceLocation(niobium_titanium_plate.getRegistryName(), "inventory"));
-		
-		ModelLoader.setCustomModelResourceLocation(lens, 0,
-				new ModelResourceLocation(lens.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(diamond_lens, 0,
-				new ModelResourceLocation(diamond_lens.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(rocket, 0,
-				new ModelResourceLocation(rocket.getRegistryName(), "inventory"));
 		
 		ModelLoader.setCustomModelResourceLocation(superconducting_cable, 0,
 				new ModelResourceLocation(superconducting_cable.getRegistryName(), "inventory"));
@@ -322,27 +312,6 @@ public class ItemCraftingManager {
 		Recipes.metalformerExtruding.addRecipe(Recipes.inputFactory.forStack(new ItemStack(super_iridium_alloy)),
 				null, false, new ItemStack(super_iridium_blade));
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(lens), 
-				new Object[] {
-						"GFG",
-						"FRF",
-						"GFG",
-						'F', IC2Items.getItem("plate", "iron"),
-						'G', Item.getItemFromBlock(Blocks.GLASS),
-						'R', IC2Items.getItem("glass", "reinforced")
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(diamond_lens), 
-				new Object[] {
-						"GFG",
-						"FRF",
-						"GFG",
-						'F', niobium_titanium_plate,
-						'G', IC2Items.getItem("glass", "reinforced"),
-						'R', Items.DIAMOND
-				});
-		
-
 		Recipes.advRecipes.addRecipe(new ItemStack(rocket, 3),
 				new Object[] {
 						"TST",
@@ -380,4 +349,4 @@ public class ItemCraftingManager {
 						'E', IC2Items.getItem("crafting", "scrap_box")
 				});
 	}
- }
+}

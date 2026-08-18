@@ -34,7 +34,6 @@ public class ItemCraftingManager {
 	public static Item titanium_ingot;
 	public static Item titanium_plate;
 	public static Item titanium_casing;
-	public static Item titanium_shaft;
 	
 	public static Item niobium_titanium_dust;
 	public static Item niobium_titanium_ingot;
@@ -42,9 +41,6 @@ public class ItemCraftingManager {
 	
 	public static Item thorium_pile;
 	public static Item thorium_dust;
-	
-	public static Item superconducting_cable;
-	public static Item super_circuit;
 	
 	public static Item super_iridium_alloy;
 	public static Item super_iridium_compress_plate;
@@ -64,7 +60,6 @@ public class ItemCraftingManager {
 		titanium_ingot = new UniformCraftingItem("titanium_ingot", 64);
 		titanium_plate = new UniformCraftingItem("titanium_plate", 64);
 		titanium_casing = new UniformCraftingItem("titanium_casing", 64);
-		titanium_shaft = new UniformCraftingItem("titanium_shaft", 64);
 		
 		thorium_pile = new UniformCraftingItem("thorium_pile", 64);
 		thorium_dust = new UniformCraftingItem("thorium_dust", 64);
@@ -73,15 +68,7 @@ public class ItemCraftingManager {
 		niobium_titanium_ingot = new UniformCraftingItem("niobium_titanium_ingot", 64);
 		niobium_titanium_plate = new UniformCraftingItem("niobium_titanium_plate", 64);
 		
-		superconducting_cable = new UniformCraftingItem("superconducting_cable", 64) {
-			@Override
-			public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-				String info = Localization.translate("mets.info.crafting_only");
-				tooltip.add(info);
-			}
-		};
 		super_iridium_alloy = new UniformCraftingItem("super_iridium_alloy", 64);
-		super_circuit = new UniformCraftingItem("super_circuit", 64);
 		super_iridium_compress_plate = new UniformCraftingItem("super_iridium_compress_plate", 64);
 		
 		copper_nugget = new UniformCraftingItem("copper_nugget", 64);
@@ -100,7 +87,6 @@ public class ItemCraftingManager {
 		event.getRegistry().register(titanium_ingot);
 		event.getRegistry().register(titanium_plate);
 		event.getRegistry().register(titanium_casing);
-		event.getRegistry().register(titanium_shaft);
 		
 		event.getRegistry().register(thorium_pile);
 		event.getRegistry().register(thorium_dust);
@@ -110,8 +96,6 @@ public class ItemCraftingManager {
 		event.getRegistry().register(niobium_titanium_plate);
 		
 		event.getRegistry().register(super_iridium_alloy);
-		event.getRegistry().register(superconducting_cable);
-		event.getRegistry().register(super_circuit);
 		event.getRegistry().register(super_iridium_compress_plate);
 		
 		event.getRegistry().register(copper_nugget);
@@ -138,8 +122,6 @@ public class ItemCraftingManager {
 				new ModelResourceLocation(titanium_plate.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(titanium_casing, 0,
 				new ModelResourceLocation(titanium_casing.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(titanium_shaft, 0,
-				new ModelResourceLocation(titanium_shaft.getRegistryName(), "inventory"));
 		
 		ModelLoader.setCustomModelResourceLocation(thorium_pile, 0,
 				new ModelResourceLocation(thorium_pile.getRegistryName(), "inventory"));
@@ -152,11 +134,6 @@ public class ItemCraftingManager {
 				new ModelResourceLocation(niobium_titanium_ingot.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(niobium_titanium_plate, 0,
 				new ModelResourceLocation(niobium_titanium_plate.getRegistryName(), "inventory"));
-		
-		ModelLoader.setCustomModelResourceLocation(superconducting_cable, 0,
-				new ModelResourceLocation(superconducting_cable.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(super_circuit, 0,
-				new ModelResourceLocation(super_circuit.getRegistryName(), "inventory"));
 		
 		ModelLoader.setCustomModelResourceLocation(super_iridium_alloy, 0,
 				new ModelResourceLocation(super_iridium_alloy.getRegistryName(), "inventory"));		
@@ -183,7 +160,6 @@ public class ItemCraftingManager {
 		OreDictionary.registerOre("ingotTitanium", titanium_ingot);
 		OreDictionary.registerOre("plateTitanium", titanium_plate);
 		OreDictionary.registerOre("casingTitanium", titanium_casing);
-		OreDictionary.registerOre("shaftTitanium", titanium_shaft);
 		
 		OreDictionary.registerOre("pileThorium", thorium_pile);
 		OreDictionary.registerOre("dustThorium", thorium_dust);
@@ -191,8 +167,6 @@ public class ItemCraftingManager {
 		/*OreDictionary.registerOre("dustNiobiumTitanium", niobium_titanium_dust);
 		OreDictionary.registerOre("ingotNiobiumTitanium", niobium_titanium_ingot);
 		OreDictionary.registerOre("plateNiobiumTitanium", niobium_titanium_plate);*/
-		
-		OreDictionary.registerOre("circuitElite", super_circuit);
 		
 		OreDictionary.registerOre("nuggetCopper", copper_nugget);
 		OreDictionary.registerOre("nuggetTin", tin_nugget);
@@ -227,8 +201,6 @@ public class ItemCraftingManager {
 		
 		Recipes.metalformerRolling.addRecipe(Recipes.inputFactory.forOreDict("plateTitanium"),
 				null, false,new ItemStack[] {new ItemStack(titanium_casing, 2)});
-		Recipes.metalformerExtruding.addRecipe(Recipes.inputFactory.forOreDict("blockTitanium"),
-				null, false, new ItemStack(titanium_shaft));
 		//Nb_Ti
 		Recipes.advRecipes.addShapelessRecipe(new ItemStack(niobium_titanium_dust, 2),
 				niobium_dust, titanium_dust, titanium_dust, titanium_dust);
@@ -244,27 +216,6 @@ public class ItemCraftingManager {
 		
 		Recipes.metalformerRolling.addRecipe(Recipes.inputFactory.forStack(new ItemStack(niobium_titanium_ingot)),
 				null, false, new ItemStack(niobium_titanium_plate));
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(superconducting_cable, 2),
-				new Object[] {
-						"XXX",
-						"STS",
-						"XXX",
-						'S', IC2Items.getItem("dust", "energium"),
-						'T', IC2Items.getItem("cable", "type:glass,insulation:0"),
-						'X', niobium_titanium_plate
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(super_circuit, 2),
-				new Object[] {
-						"XXX",
-						"STS",
-						"XXX",
-						'S', IC2Items.getItem("crafting", "advanced_circuit"),
-						'T', niobium_titanium_plate,
-						'X', superconducting_cable
-				});
-		UuIndex.instance.add(new ItemStack(super_circuit), 14e2);
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(super_iridium_alloy),
 				new Object[] {

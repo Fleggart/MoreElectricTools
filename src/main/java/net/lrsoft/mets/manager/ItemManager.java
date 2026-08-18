@@ -21,13 +21,11 @@ import net.minecraftforge.oredict.OreDictionary;
 @Mod.EventBusSubscriber(modid = MoreElectricTools.MODID)
 public class ItemManager {
     
-    public static SuperLapotronCrystal superLapotronCrystal;
     public static AdvancedLithiumBattery advancedLithiumBattery;
     public static LithiumBattery lithiumBattery;
     public static ThoriumBattery thoriumBattery;
     
     static {
-        superLapotronCrystal = new SuperLapotronCrystal();
         advancedLithiumBattery = new AdvancedLithiumBattery();
         lithiumBattery = new LithiumBattery();
         thoriumBattery = new ThoriumBattery();
@@ -35,12 +33,10 @@ public class ItemManager {
     
     @SubscribeEvent
     public static void onItemInit(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(superLapotronCrystal);
         event.getRegistry().register(advancedLithiumBattery);
         event.getRegistry().register(lithiumBattery);
         event.getRegistry().register(thoriumBattery);
         
-        OreDictionary.registerOre("superLapotronCrystal", superLapotronCrystal);
         OreDictionary.registerOre("advancedLithiumBattery", advancedLithiumBattery);
         OreDictionary.registerOre("lithiumBattery", lithiumBattery);
         
@@ -55,16 +51,6 @@ public class ItemManager {
     }
     
     private static void onRecipeInit() {
-        Recipes.advRecipes.addRecipe(new ItemStack(superLapotronCrystal), 
-                new Object[] {
-                        "SCS",
-                        "SDS",
-                        "SCS",
-                        'S', ItemCraftingManager.niobium_titanium_plate,
-                        'C', Recipes.inputFactory.forOreDict("circuitElite"),
-                        'D', getAllTypeStack(IC2Items.getItem("lapotron_crystal"))
-                });
-        
         Recipes.advRecipes.addRecipe(new ItemStack(advancedLithiumBattery), 
                 new Object[] {
                         "CSC",

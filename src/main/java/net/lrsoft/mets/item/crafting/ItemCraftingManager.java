@@ -49,9 +49,7 @@ public class ItemCraftingManager {
 	public static Item superconducting_cable;
 	public static Item super_circuit;
 	
-	public static Item titanium_iron_rotor_blade;
 	public static Item super_iridium_alloy;
-	public static Item super_iridium_blade;
 	public static Item super_iridium_compress_plate;
 	
 	public static Item copper_nugget;
@@ -90,8 +88,6 @@ public class ItemCraftingManager {
 		};
 		super_iridium_alloy = new UniformCraftingItem("super_iridium_alloy", 64);
 		super_circuit = new UniformCraftingItem("super_circuit", 64);
-		titanium_iron_rotor_blade = new UniformCraftingItem("titanium_iron_rotor_blade", 64);
-		super_iridium_blade = new UniformCraftingItem("super_iridium_blade", 64);
 		super_iridium_compress_plate = new UniformCraftingItem("super_iridium_compress_plate", 64);
 		
 		copper_nugget = new UniformCraftingItem("copper_nugget", 64);
@@ -125,8 +121,6 @@ public class ItemCraftingManager {
 		event.getRegistry().register(super_iridium_alloy);
 		event.getRegistry().register(superconducting_cable);
 		event.getRegistry().register(super_circuit);
-		event.getRegistry().register(titanium_iron_rotor_blade);
-		event.getRegistry().register(super_iridium_blade);
 		event.getRegistry().register(super_iridium_compress_plate);
 		
 		event.getRegistry().register(copper_nugget);
@@ -180,10 +174,6 @@ public class ItemCraftingManager {
 		
 		ModelLoader.setCustomModelResourceLocation(super_iridium_alloy, 0,
 				new ModelResourceLocation(super_iridium_alloy.getRegistryName(), "inventory"));		
-		ModelLoader.setCustomModelResourceLocation(titanium_iron_rotor_blade, 0,
-				new ModelResourceLocation(titanium_iron_rotor_blade.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(super_iridium_blade, 0,
-				new ModelResourceLocation(super_iridium_blade.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(super_iridium_compress_plate, 0,
 				new ModelResourceLocation(super_iridium_compress_plate.getRegistryName(), "inventory"));
 		
@@ -290,16 +280,7 @@ public class ItemCraftingManager {
 				});
 		UuIndex.instance.add(new ItemStack(super_circuit), 14e2);
 		
-		Recipes.advRecipes.addRecipe(new ItemStack(titanium_iron_rotor_blade), 
-				new Object[] {
-						"ASA",
-						"ASA",
-						"ASA",
-						'A', IC2Items.getItem("plate", "steel"),
-						'S', Recipes.inputFactory.forOreDict("plateTitanium")//titanium_plate
-				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(super_iridium_alloy), //super_iridium_blade
+		Recipes.advRecipes.addRecipe(new ItemStack(super_iridium_alloy),
 				new Object[] {
 						"ASA",
 						"ASA",
@@ -307,10 +288,6 @@ public class ItemCraftingManager {
 						'S', IC2Items.getItem("crafting", "iridium"),
 						'A', niobium_titanium_plate
 				});
-		
-		
-		Recipes.metalformerExtruding.addRecipe(Recipes.inputFactory.forStack(new ItemStack(super_iridium_alloy)),
-				null, false, new ItemStack(super_iridium_blade));
 		
 		Recipes.advRecipes.addRecipe(new ItemStack(rocket, 3),
 				new Object[] {

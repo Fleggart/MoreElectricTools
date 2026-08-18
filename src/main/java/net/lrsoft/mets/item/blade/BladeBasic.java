@@ -55,11 +55,11 @@ public class BladeBasic {
 			Object[] recipetable = new Object[]{
 					"XAX",
 					"XBX",
-					"CAC",
+					"XCX",
 					Character.valueOf('X'), IC2Items.getItem("casing", "iron"),
 					Character.valueOf('A'), IC2Items.getItem("crafting", "circuit"),
 					Character.valueOf('B'), custombladeReqired,
-					Character.valueOf('C'), ItemManager.getAllTypeStack(ItemManager.advancedLithiumBattery)
+					Character.valueOf('C'), ItemManager.getAllTypeStack(ItemManager.lithiumBattery)
 			};
 
 			if (Loader.isModLoaded("lastsmith")){

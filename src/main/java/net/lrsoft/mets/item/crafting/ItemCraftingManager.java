@@ -43,8 +43,6 @@ public class ItemCraftingManager {
 	public static Item thorium_pile;
 	public static Item thorium_dust;
 	
-	public static Item rocket;
-	
 	public static Item superconducting_cable;
 	public static Item super_circuit;
 	
@@ -70,8 +68,6 @@ public class ItemCraftingManager {
 		
 		thorium_pile = new UniformCraftingItem("thorium_pile", 64);
 		thorium_dust = new UniformCraftingItem("thorium_dust", 64);
-		
-		rocket = new UniformCraftingItem("rocket", 64);
 		
 		niobium_titanium_dust = new UniformCraftingItem("niobium_titanium_dust", 64);	
 		niobium_titanium_ingot = new UniformCraftingItem("niobium_titanium_ingot", 64);
@@ -108,8 +104,6 @@ public class ItemCraftingManager {
 		
 		event.getRegistry().register(thorium_pile);
 		event.getRegistry().register(thorium_dust);
-		
-		event.getRegistry().register(rocket);
 		
 		event.getRegistry().register(niobium_titanium_dust);
 		event.getRegistry().register(niobium_titanium_ingot);
@@ -151,9 +145,6 @@ public class ItemCraftingManager {
 				new ModelResourceLocation(thorium_pile.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(thorium_dust, 0,
 				new ModelResourceLocation(thorium_dust.getRegistryName(), "inventory"));
-		
-		ModelLoader.setCustomModelResourceLocation(rocket, 0,
-				new ModelResourceLocation(rocket.getRegistryName(), "inventory"));
 		
 		ModelLoader.setCustomModelResourceLocation(niobium_titanium_dust, 0,
 				new ModelResourceLocation(niobium_titanium_dust.getRegistryName(), "inventory"));
@@ -283,16 +274,6 @@ public class ItemCraftingManager {
 						'S', IC2Items.getItem("crafting", "iridium"),
 						'A', niobium_titanium_plate
 				});
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(rocket, 3),
-				new Object[] {
-						"TST",
-						"SBS", 
-						"YYY", 
-						'T', Item.getItemFromBlock(Blocks.STONE_PRESSURE_PLATE), 
-						'S', titanium_casing,
-						'B', IC2Items.getItem("te", "itnt"),
-						'Y', Items.FIREWORKS });	
 
 		Recipes.compressor.addRecipe(Recipes.inputFactory.forStack(new ItemStack(super_iridium_alloy, 3)),
 				null, false, new ItemStack(super_iridium_compress_plate));

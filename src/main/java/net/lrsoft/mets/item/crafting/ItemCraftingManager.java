@@ -42,7 +42,6 @@ public class ItemCraftingManager {
 	
 	public static Item thorium_pile;
 	public static Item thorium_dust;
-	public static Item thorium_scrap;
 	
 	public static Item rocket;
 	
@@ -71,7 +70,6 @@ public class ItemCraftingManager {
 		
 		thorium_pile = new UniformCraftingItem("thorium_pile", 64);
 		thorium_dust = new UniformCraftingItem("thorium_dust", 64);
-		thorium_scrap = new UniformCraftingItem("thorium_scrap", 64);
 		
 		rocket = new UniformCraftingItem("rocket", 64);
 		
@@ -110,7 +108,6 @@ public class ItemCraftingManager {
 		
 		event.getRegistry().register(thorium_pile);
 		event.getRegistry().register(thorium_dust);
-		event.getRegistry().register(thorium_scrap);
 		
 		event.getRegistry().register(rocket);
 		
@@ -154,8 +151,6 @@ public class ItemCraftingManager {
 				new ModelResourceLocation(thorium_pile.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(thorium_dust, 0,
 				new ModelResourceLocation(thorium_dust.getRegistryName(), "inventory"));
-		ModelLoader.setCustomModelResourceLocation(thorium_scrap, 0,
-				new ModelResourceLocation(thorium_scrap.getRegistryName(), "inventory"));
 		
 		ModelLoader.setCustomModelResourceLocation(rocket, 0,
 				new ModelResourceLocation(rocket.getRegistryName(), "inventory"));
@@ -309,21 +304,8 @@ public class ItemCraftingManager {
 		Recipes.compressor.addRecipe(Recipes.inputFactory.forStack(new ItemStack(lead_nugget, 9)),
 				null, false, IC2Items.getItem("ingot", "lead"));
 		
-		
 		//Th
 		Recipes.advRecipes.addShapelessRecipe(new ItemStack(thorium_dust),
 				thorium_pile, thorium_pile, thorium_pile, thorium_pile);
-		
-		Recipes.matterAmplifier.addRecipe(Recipes.inputFactory.forStack(new ItemStack(thorium_scrap)),
-				Integer.valueOf(120000), null, false);
-		
-		Recipes.advRecipes.addRecipe(new ItemStack(thorium_scrap), 
-				new Object[] {
-						" R ",
-						"RER", 
-						" R ", 
-						'R', thorium_dust,
-						'E', IC2Items.getItem("crafting", "scrap_box")
-				});
 	}
 }

@@ -26,14 +26,12 @@ public class SpecialRecipesHelper {
     public static IBasicMachineRecipeManager electricBlastFurnaceRecipes = new BasicMachineRecipeManager();
 
     static {
-        neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(new ItemStack(ItemCraftingManager.nano_living_metal)),
-                null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.neutron_plate)});
+        // 移除 nano_living_metal -> neutron_plate 的配方（这两个物品已被删除）
 
         neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(new ItemStack(Items.IRON_INGOT)),
                 null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.niobium_titanium_ingot)});
 
-        neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(new ItemStack(ItemCraftingManager.niobium_titanium_ingot)),
-                null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.nano_living_metal)});
+        // 移除 niobium_titanium_ingot -> nano_living_metal 的配方（nano_living_metal 已被删除）
 
         neutronPolymerizerRecipes.addRecipe(Recipes.inputFactory.forStack(IC2Items.getItem("crafting", "advanced_circuit")),
                 null, false, new ItemStack[] {new ItemStack(ItemCraftingManager.super_circuit)});

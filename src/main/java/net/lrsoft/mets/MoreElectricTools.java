@@ -32,8 +32,8 @@ public class MoreElectricTools
 		@Override
 		public ItemStack getTabIconItem() 
 		{
-			// 使用 SuperLapotronCrystal 作为创造模式标签页图标，替代 AdvancedIridiumSword
-			return new ItemStack(ItemManager.superLapotronCrystal);
+			// 使用 AdvancedLithiumBattery 作为创造模式标签页图标
+			return new ItemStack(ItemManager.advancedLithiumBattery);
 		}
 	};
 
